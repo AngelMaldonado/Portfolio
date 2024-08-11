@@ -1,6 +1,10 @@
 import express, { Application } from "express"
-import skillRoutes from "./routes/skill.routes"
 import mongoose from "mongoose"
+import skillRoutes from "./routes/skill.routes"
+import userRoutes from "./routes/user.routes"
+import projectRoutes from "./routes/project.routes"
+import postRoutes from "./routes/post.routes"
+import commentRoutes from "./routes/comment.routes"
 
 class App {
   private readonly app: Application
@@ -30,6 +34,10 @@ class App {
 
   private InitRoutes() {
     this.app.use("/api/skills", skillRoutes)
+    this.app.use("/api/users", userRoutes)
+    this.app.use("/api/projects", projectRoutes)
+    this.app.use("/api/posts", postRoutes)
+    this.app.use("/api/comments", commentRoutes)
   }
 
   async db() {

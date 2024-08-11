@@ -1,0 +1,35 @@
+@endpoint=/api/posts
+### Create
+
+post {{hostname}}{{endpoint}}
+Content-Type: application/json
+
+{
+  "slug": "how-to-create-a-blog",
+  "title": "How to create a blog",
+  "abstract": "This is a tutorial on how to create a blog",
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
+  "markdownUrl": "https://raw.githubusercontent.com/..."
+}
+
+### All
+
+get {{hostname}}{{endpoint}}
+
+### Update one
+
+put {{hostname}}{{endpoint}}
+Content-Type: application/json
+
+{
+  "_id": "66b8f5711d39186008c7dcdb",
+  "slug": "how-to-not-create--a-blog",
+  "title": "How to NOT create a blog",
+  "abstract": "This is a tutorial on how to create a blog",
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
+  "markdownUrl": "https://raw.githubusercontent.com/..."
+}
+
+### Delete one
+
+delete {{hostname}}{{endpoint}}/66b8f5711d39186008c7dcdb

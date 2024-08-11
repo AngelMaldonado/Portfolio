@@ -1,0 +1,36 @@
+@endpoint=/api/comments
+
+### Create
+
+post {{hostname}}{{endpoint}}
+Content-Type: application/json
+
+{
+  "stars": 5,
+  "comment": "Excelente post de prueba 2 de comentarios 2",
+  "post": "66b8f5b41d39186008c7dce3",
+  "user": "66b8f0678dd13153b9254dd2"
+}
+
+### All
+
+get {{hostname}}{{endpoint}}
+
+### Update one
+
+put {{hostname}}{{endpoint}}
+Content-Type: application/json
+
+{
+  "_id": "66b9476f934454fcf2d8188b",
+  "stars": 2,
+  "comment": "Cambio de comentario",
+  "post": "66b8f5b41d39186008c7dce3",
+  "user": "66b8f0678dd13153b9254dd2"
+}
+
+### Delete one
+
+delete {{hostname}}{{endpoint}}/66b946fe698c89dd08392fd9
+
+

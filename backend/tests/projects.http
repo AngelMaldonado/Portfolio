@@ -1,0 +1,39 @@
+@endpoint=/api/projects
+### Create
+
+post {{hostname}}{{endpoint}}
+Content-Type: application/json
+
+{
+  "startDate": "2024-01-01",
+  "endDate": "2025-01-01",
+  "title": "App: TEA",
+  "description": "App para la gestión de la empresa TEA",
+  "projectUrl": "https://www.tea.com",
+  "repoUrl": "http://www.github.com/tea",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
+}
+
+### All
+
+get {{hostname}}{{endpoint}}
+
+### Update one
+
+put {{hostname}}{{endpoint}}
+Content-Type: application/json
+
+{
+  "_id": "66b8f32021b01d0f70ca375d",
+  "startDate:": "2024-01-01",
+  "endDate:": "2025-01-01",
+  "title": "Other title",
+  "description": "App para la gestión de la empresa TEA",
+  "projectUrl": "https://www.tea.com",
+  "repoUrl": "http://www.github.com/tea",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
+}
+
+### Delete one
+
+delete {{hostname}}{{endpoint}}/66b8f32021b01d0f70ca375d
