@@ -1,0 +1,29 @@
+@endpoint=/api/users
+### Create
+
+post {{hostname}}{{endpoint}}
+Content-Type: application/json
+
+{
+  "email": "amaldonadojuarez@gmail.com",
+  "name": "Angel de Jesús Maldonado Juárez"
+}
+
+### All
+
+get {{hostname}}{{endpoint}}
+
+### Update one
+
+put {{hostname}}{{endpoint}}
+Content-Type: application/json
+
+{
+  "_id": "66b8efb78dd13153b9254dc8",
+  "email": "a292363@alumnos.uaslp.mx",
+  "name": "Eduardo Pérez González"
+}
+
+### Delete one
+
+delete {{hostname}}{{endpoint}}/66b8efb78dd13153b9254dc8

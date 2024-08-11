@@ -1,6 +1,7 @@
+@endpoint=/api/skills
 ### Create
 
-post {{hostname}}/api/skills
+post {{hostname}}{{endpoint}}
 Content-Type: application/json
 
 {
@@ -10,11 +11,11 @@ Content-Type: application/json
 
 ### All
 
-get {{hostname}}/api/skills
+get {{hostname}}{{endpoint}}
 
 ### Update one
 
-put {{hostname}}/api/skills
+put {{hostname}}{{endpoint}}
 Content-Type: application/json
 
 {
@@ -25,4 +26,4 @@ Content-Type: application/json
 
 ### Delete one
 
-delete {{hostname}}/api/skills/66b81a2723ad8551ecabe53a
+delete {{hostname}}{{endpoint}}/66b81a2723ad8551ecabe53a
