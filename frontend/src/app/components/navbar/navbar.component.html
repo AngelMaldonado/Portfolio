@@ -25,6 +25,13 @@
     <li><app-link href="/" text="Volver" [toRoute]=true /></li>
     <li><app-link href="/admin" text="Admin" [toRoute]=true /></li>
     <li><app-link href="/login" text="Login" [toRoute]=true /></li>
+    } @else if (this.router.url.includes('dashboard')) {
+    <li><app-link href="/dashboard" text="Inicio" [toRoute]=true /></li>
+    <li><app-link href="/dashboard/technologies" text="Tecnologías" [toRoute]=true /></li>
+    <li><app-link href="/dashboard/projects" text="Proyectos" [toRoute]=true /></li>
+    <li><app-link href="/dashboard/posts" text="Posts" [toRoute]=true /></li>
+    <li><app-link href="/dashboard/users" text="Usuarios" [toRoute]=true /></li>
+    <li><app-link href="#" text="Cerrar Sesión" [toRoute]=true /></li>
     }
   </ul>
 </nav>
