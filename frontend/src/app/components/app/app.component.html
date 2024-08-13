@@ -1,5 +1,5 @@
 <app-navbar />
-<main aria-label="Contenido principal">
+<main aria-label="Contenido principal" [className]="!router.url.includes('dashboard') ? '' : 'vh-100'">
   <router-outlet />
 </main>
 

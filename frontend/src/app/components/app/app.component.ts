@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { NavbarComponent } from "../navbar/navbar.component";
 import { FooterComponent } from '../footer/footer.component';
 import { fromEvent, throttleTime } from 'rxjs';
@@ -14,7 +14,7 @@ import { fromEvent, throttleTime } from 'rxjs';
 export class AppComponent {
   title = 'angel-maldonado';
 
-  constructor() {
+  constructor(protected router: Router) {
     fromEvent(window, 'scroll')
       .pipe(throttleTime(100))
       .subscribe((event) => this.onWindowScroll(event))
