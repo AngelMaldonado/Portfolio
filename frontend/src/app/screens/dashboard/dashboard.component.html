@@ -1,22 +1,8 @@
-<section aria-labelledby="dash-techs" class="techs">
-  <header>
-    <h1 id="dash-techs">Tecnologías</h1>
-    <input type="search" name="" id="">
-    <button>Buscar</button>
-  </header>
-  <ul class="techs__list">
-    <li>
-      <app-dashboard-tech-card />
-    </li>
-    <li>
-      <app-dashboard-tech-card />
-    </li>
-    <li>
-      <app-dashboard-tech-card />
-    </li>
-    <li>
-      <app-dashboard-tech-card />
-    </li>
-  </ul>
-  <button class="new-button">Nuevo</button>
-</section>
+@switch (this.router.url) {
+@case ('/dashboard/technologies') {
+<app-dashboard-techs-panel></app-dashboard-techs-panel>
+}
+@case ('/dashboard/projects') {
+<app-dashboard-projects-panel></app-dashboard-projects-panel>
+}
+}

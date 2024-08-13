@@ -11,4 +11,8 @@ export const routes: Routes = [
   { path: 'blog/post/:id', component: BlogPostComponent },
   { path: 'blog/user/:id', component: BlogProfileComponent },
   { path: 'dashboard', component: DashboardComponent },
+  { path: 'dashboard/technologies', component: DashboardComponent },
+  { path: 'dashboard/projects', component: DashboardComponent },
+  { path: 'dashboard/posts', component: DashboardComponent },
+  { path: 'dashboard/users', component: DashboardComponent },
 ];
