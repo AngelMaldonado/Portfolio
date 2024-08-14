@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DashboardTechCardComponent } from "../dashboard-tech-card/dashboard-tech-card.component";
+import { DashboardTechCardComponent } from '../../templates/dashboard-tech-card/dashboard-tech-card.component';
 
 @Component({
   selector: 'app-dashboard-techs-panel',

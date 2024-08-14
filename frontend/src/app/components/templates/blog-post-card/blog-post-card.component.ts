@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { LinkComponent } from '../link/link.component';
+import { LinkComponent } from '../../atoms/link/link.component';
 
 @Component({
   selector: 'app-blog-post-card',

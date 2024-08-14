@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { LinkComponent } from "../../components/link/link.component";
-import { BadgeComponent } from "../../components/badge/badge.component";
-import { BlogPostCardComponent } from "../../components/blog-post-card/blog-post-card.component";
+import { LinkComponent } from '../../components/atoms/link/link.component';
+import { BadgeComponent } from '../../components/atoms/badge/badge.component';
+import { BlogPostCardComponent } from '../../components/templates/blog-post-card/blog-post-card.component';
 
 @Component({
   selector: 'app-blog-home',

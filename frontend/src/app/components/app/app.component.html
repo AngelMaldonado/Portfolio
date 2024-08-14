@@ -1,4 +1,9 @@
+@if (this.router.url.includes('dashboard')) {
+<app-dashboard-navbar />
+} @else {
 <app-navbar />
+}
+
 <main aria-label="Contenido principal" [className]="!router.url.includes('dashboard') ? '' : 'vh-100'">
   <router-outlet />
 </main>

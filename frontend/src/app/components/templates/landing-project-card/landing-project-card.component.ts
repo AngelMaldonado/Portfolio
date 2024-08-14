@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { LinkComponent } from "../link/link.component";
 import { SvgIconComponent } from '@ngneat/svg-icon';
+import { LinkComponent } from '../../atoms/link/link.component';
 
 @Component({
   selector: 'app-landing-project-card',

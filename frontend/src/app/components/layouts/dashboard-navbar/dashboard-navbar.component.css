@@ -1,0 +1,28 @@
+.navbar-dashboard {
+  height: var(--navbar-height);
+  padding: var(--navbar-padding);
+  display: flex;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  background-color: var(--primary-color-50);
+
+  >input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+  }
+
+  >form {
+    margin-left: var(--spacer-1);
+    flex: 1;
+
+    >input {
+      width: 100%;
+    }
+  }
+
+  >ul {
+    display: none;
+  }
+}

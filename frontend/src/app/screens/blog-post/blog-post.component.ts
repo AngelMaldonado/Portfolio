@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { BadgeComponent } from "../../components/badge/badge.component";
-import { StarsRatingComponent } from '../../components/stars-rating/stars-rating.component';
+import { BadgeComponent } from '../../components/atoms/badge/badge.component';
+import { StarsRatingComponent } from '../../components/atoms/stars-rating/stars-rating.component';
 import { RouterLink } from '@angular/router';
 import { Location } from '@angular/common';
 

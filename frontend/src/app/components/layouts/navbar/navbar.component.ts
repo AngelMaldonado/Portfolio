@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, HostListener } from '@angular/core';
-import { LinkComponent } from "../link/link.component";
 import { Router } from '@angular/router';
+import { LinkComponent } from '../../atoms/link/link.component';
 
 @Component({
   selector: 'app-navbar',

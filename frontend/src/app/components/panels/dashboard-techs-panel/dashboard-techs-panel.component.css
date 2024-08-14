@@ -21,7 +21,7 @@
 
   >.new-button {
     position: fixed;
-    bottom: calc(var(--footer-height) + 1rem);
+    bottom: calc(var(--footer-height) + var(--spacer-1));
     left: calc(var(--spacer-1));
     width: calc(100% - (var(--spacer-1) * 2));
     transition: font-size .3s ease, outline .3s ease;

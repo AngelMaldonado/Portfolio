@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { DashboardTechsPanelComponent } from "../../components/dashboard-techs-panel/dashboard-techs-panel.component";
-import { DashboardProjectsPanelComponent } from '../../components/dashboard-projects-panel/dashboard-projects-panel.component';
+import { DashboardProjectsPanelComponent } from '../../components/panels/dashboard-projects-panel/dashboard-projects-panel.component';
+import { DashboardTechsPanelComponent } from '../../components/panels/dashboard-techs-panel/dashboard-techs-panel.component';
 
 @Component({
   selector: 'app-dashboard',
