@@ -1,28 +1,107 @@
-.navbar-dashboard {
-  height: var(--navbar-height);
-  padding: var(--navbar-padding);
-  display: flex;
-  align-items: center;
+.navbar {
+  z-index: 1;
   position: fixed;
   width: 100%;
-  z-index: 1;
+  height: var(--navbar-height);
+  padding: var(--navbar-padding);
   background-color: var(--primary-color-50);
 
-  >input[type="checkbox"] {
-    position: absolute;
-    opacity: 0;
+  .toggler {
+    float: left;
   }
 
   >form {
-    margin-left: var(--spacer-1);
-    flex: 1;
+    width: 85%;
+    height: 100%;
+    float: right;
+    margin-bottom: 1rem;
 
     >input {
+      height: 100%;
       width: 100%;
     }
   }
 
   >ul {
     display: none;
+    max-width: 0;
+    height: 100vh;
+    overflow: hidden;
+    padding: inherit;
+    background-color: inherit;
+    transform: translate(-6rem);
+    animation: appear .3s;
+
+    >li {
+      span {
+        display: inline-block;
+        transform: translateY(-1rem);
+      }
+    }
+
+    &.expanded-off-canvas {
+      width: 80%;
+      max-width: 40rem;
+      display: block;
+      transform: translateX(-2rem);
+    }
+  }
+}
+
+@keyframes appear {
+  from {
+    max-width: 0;
+    opacity: 0;
+  }
+
+  to {
+    max-width: 40rem;
+    opacity: 1;
+  }
+}
+
+@media (width >=992px) {
+  .navbar {
+    >.toggler {
+      display: none;
+    }
+
+    >form {
+      margin-bottom: 0;
+    }
+
+    >ul {
+      overflow: visible;
+      display: block;
+      width: max-content;
+      padding: 0 2rem;
+      max-width: unset;
+      transform: translate(-5rem, 0rem);
+      text-align: center;
+
+      >li {
+        position: relative;
+
+        span {
+          width: max-content;
+          position: absolute;
+          top: 2rem;
+          left: 50%;
+          padding: .8rem 1rem;
+          opacity: 0;
+          border-radius: 1rem;
+          background-color: var(--highlight-color-100);
+          transition: left .3s ease, opacity .3s ease;
+        }
+
+        &:hover {
+          span {
+            display: block;
+            opacity: 1;
+            left: 100%;
+          }
+        }
+      }
+    }
   }
 }

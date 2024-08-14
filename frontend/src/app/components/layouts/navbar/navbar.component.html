@@ -15,16 +15,16 @@
   <input type="checkbox" aria-label="Despliegue de menu principal" id="main-nav-toggler" />
   <ul [className]="this.expanded ? 'expanded' : ''">
     @if (onLandingPage()) {
-    <li><app-link href="#landing-inicio" text="Inicio" [active]=true /></li>
-    <li><app-link href="#landing-sobre-mi" text="Sobre mí" /></li>
-    <li><app-link href="#landing-habilidades" text="Habilidades" /></li>
-    <li><app-link href="#landing-proyectos" text="Proyectos" /></li>
-    <li><app-link href="#landing-contacto" text="Contacto" /></li>
-    <li><app-link href="/blog" text="Blog" [toRoute]=true /></li>
+    <li><app-link href="#landing-inicio" [active]=true>Inicio</app-link></li>
+    <li><app-link href="#landing-sobre-mi">Sobre mí</app-link></li>
+    <li><app-link href="#landing-habilidades">Habilidades</app-link></li>
+    <li><app-link href="#landing-proyectos">Proyectos</app-link></li>
+    <li><app-link href="#landing-contacto">Contacto</app-link></li>
+    <li><app-link href="/blog" [toRoute]=true>Blog</app-link></li>
     } @else if (this.router.url == '/blog') {
-    <li><app-link href="/" text="Volver" [toRoute]=true /></li>
-    <li><app-link href="/admin" text="Admin" [toRoute]=true /></li>
-    <li><app-link href="/login" text="Login" [toRoute]=true /></li>
+    <li><app-link href="/" [toRoute]=true>Volver</app-link></li>
+    <li><app-link href="/admin" [toRoute]=true>Admin</app-link></li>
+    <li><app-link href="/login" [toRoute]=true>Login</app-link></li>
     }
   </ul>
 </nav>

@@ -1,10 +1,4 @@
-@if (toRoute) {
-<a [class]="'link' + (active ? ' active' : '')" [routerLink]="href">
-  {{text}}
+<a tabindex="0" [class]="'link' + (active ? ' active' : '')" [attr.href]="!toRoute && href ? href : null"
+  (click)="!toRoute && href.startsWith('#') ? scrollTo(this.href) : navigateTo(href)">
+  <ng-content />
 </a>
-} @else {
-<a [class]="'link' + (active ? ' active' : '')" [href]="href"
-  (click)="href.startsWith('#') ? scrollTo(this.href) : null">
-  {{text}}
-</a>
-}

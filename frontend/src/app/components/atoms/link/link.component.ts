@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-link',
@@ -10,14 +10,19 @@ import { RouterLink } from '@angular/router';
 })
 export class LinkComponent {
   @Input() href: string = '#';
-  @Input() text: string = 'Link';
   @Input() active: boolean = false;
   @Input() toRoute: boolean = false
+
+  constructor(private router: Router) { }
 
   scrollTo(section: string): void {
     const element = document.querySelector(section);
     if (element) {
       element.scrollIntoView();
     }
+  }
+
+  navigateTo(route: string): void {
+    this.router.navigate([route]);
   }
 }
