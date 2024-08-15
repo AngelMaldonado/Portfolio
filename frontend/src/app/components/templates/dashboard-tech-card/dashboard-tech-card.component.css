@@ -5,8 +5,8 @@
   align-items: center;
   justify-content: space-between;
   background-color: var(--primary-color-50);
-  padding: var(--spacer-1);
-  border-radius: var(--spacer-1);
+  padding: var(--dashboard-cards-padding);
+  border-radius: var(--dashboard-cards-border-radius);
 
   >img {
     width: 10rem;
@@ -21,22 +21,6 @@
     display: flex;
     flex-direction: column;
     gap: calc(var(--spacer-1) * .5);
-
-    >button {
-      position: relative;
-      border-radius: 50%;
-      width: var(--spacer-2);
-      height: var(--spacer-2);
-
-      >.icon {
-        width: var(--spacer-1);
-        height: var(--spacer-1);
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-    }
   }
 }
 

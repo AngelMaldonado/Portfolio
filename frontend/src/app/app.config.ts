@@ -22,6 +22,7 @@ import { newsIcon } from '../assets/svg/news';
 import { portfolioIcon } from '../assets/svg/portfolio';
 import { userIcon } from '../assets/svg/user';
 import { addIcon } from '../assets/svg/add';
+import { externalIcon } from '../assets/svg/external';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -46,7 +47,8 @@ export const appConfig: ApplicationConfig = {
       newsIcon,
       portfolioIcon,
       userIcon,
-      addIcon
+      addIcon,
+      externalIcon
     ])
   ]
 };

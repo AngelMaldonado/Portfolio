@@ -1,0 +1,7 @@
+.projects {
+  .projects__list {
+    li {
+      margin: var(--spacer-2) 0;
+    }
+  }
+}

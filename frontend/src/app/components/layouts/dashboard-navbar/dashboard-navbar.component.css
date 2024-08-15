@@ -44,19 +44,22 @@
   }
 
   >ul {
-    display: none;
     max-width: 0;
-    height: 100vh;
-    overflow: hidden;
+    height: calc(100vh - var(--navbar-height));
+    position: absolute;
+    left: 0;
+    top: 100%;
     padding: inherit;
+    overflow: hidden;
+    display: none;
     background-color: inherit;
-    transform: translate(-6rem);
     animation: appear .3s;
 
     >li {
-      span {
-        display: inline-block;
-        transform: translateY(-1rem);
+      width: 100%;
+
+      &:last-child {
+        margin-top: auto;
       }
     }
 
@@ -64,7 +67,6 @@
       width: 80%;
       max-width: 40rem;
       display: block;
-      transform: translateX(-2rem);
     }
   }
 }
@@ -98,16 +100,15 @@
       height: 90vh;
       max-width: unset;
       position: absolute;
-      left: 8rem;
+      left: 2rem;
       top: 55%;
+      padding: 2rem 1rem;
+      border-radius: 2rem;
       display: flex;
       flex-direction: column;
       gap: var(--spacer-1);
-      align-items: center;
-      justify-content: start;
+      text-align: center;
       overflow: visible;
-      padding: 2rem 1rem;
-      border-radius: 2rem;
       background-color: var(--primary-color-50);
 
       >li {

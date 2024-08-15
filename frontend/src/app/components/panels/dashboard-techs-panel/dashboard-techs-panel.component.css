@@ -1,8 +1,4 @@
 .techs {
-  >header {
-    margin-bottom: var(--spacer-2);
-  }
-
   .techs__list {
     padding-bottom: var(--dashboard-cards-list-padding-bottom);
 
