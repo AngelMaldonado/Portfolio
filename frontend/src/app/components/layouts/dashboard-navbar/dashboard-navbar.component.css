@@ -4,6 +4,7 @@
   width: 100%;
   height: var(--navbar-height);
   padding: var(--navbar-padding);
+  display: flex;
   background-color: var(--primary-color-50);
 
   .toggler {
@@ -12,13 +13,33 @@
 
   >form {
     width: 85%;
+    max-width: 35rem;
     height: 100%;
-    float: right;
+    position: relative;
+    margin: 0 auto;
     margin-bottom: 1rem;
 
     >input {
       height: 100%;
       width: 100%;
+      padding-right: 4.5rem;
+    }
+
+    >button {
+      width: 4rem;
+      height: 4rem;
+      position: absolute;
+      right: .5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 0;
+      border-radius: 50%;
+      color: var(--highlight-color-100);
+
+      >.icon {
+        width: 100%;
+        height: 100%;
+      }
     }
   }
 
@@ -62,6 +83,8 @@
 
 @media (width >=992px) {
   .navbar {
+    background-color: transparent;
+
     >.toggler {
       display: none;
     }
@@ -71,16 +94,25 @@
     }
 
     >ul {
-      overflow: visible;
-      display: block;
       width: max-content;
-      padding: 0 2rem;
+      height: 90vh;
       max-width: unset;
-      transform: translate(-5rem, 0rem);
-      text-align: center;
+      position: absolute;
+      left: 8rem;
+      top: 55%;
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacer-1);
+      align-items: center;
+      justify-content: start;
+      overflow: visible;
+      padding: 2rem 1rem;
+      border-radius: 2rem;
+      background-color: var(--primary-color-50);
 
       >li {
         position: relative;
+        margin: 0;
 
         span {
           width: max-content;
@@ -90,11 +122,17 @@
           padding: .8rem 1rem;
           opacity: 0;
           border-radius: 1rem;
+          color: var(--white);
           background-color: var(--highlight-color-100);
           transition: left .3s ease, opacity .3s ease;
         }
 
-        &:hover {
+        &:last-child {
+          margin-top: auto;
+        }
+
+        &:hover,
+        &:focus-within {
           span {
             display: block;
             opacity: 1;

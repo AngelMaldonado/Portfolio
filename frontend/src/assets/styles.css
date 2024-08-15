@@ -17,9 +17,9 @@
   /** PADDINGS **/
   --container-padding-x: 1.5rem;
   --container-padding-y: 7.5rem;
+  --dashboard-panel-padding: calc(var(--navbar-height) + 2rem) 1.5rem 1.5rem 1.5rem;
   --navbar-padding: 1.5rem 2rem;
   --btn-padding: 1rem 2rem;
-  --dashboard-cards-list-padding-bottom: 14rem;
   /** SPACERS **/
   --spacer-1: 2rem;
   --spacer-2: 4rem;
@@ -38,6 +38,7 @@
   :root {
     --navbar-padding: 1.5rem 5rem;
     --landing-tech-card-bg: linear-gradient(340deg, rgba(31, 41, 55, 1) 20%, rgba(31, 41, 55, 1) 55%, rgba(17, 24, 39, 0.3) 100%);
+    --dashboard-panel-padding: calc(var(--navbar-height) + var(--spacer-2)) var(--spacer-2) var(--spacer-2) calc(11rem + var(--spacer-2));
   }
 }
 
@@ -73,6 +74,10 @@ section,
 .container {
   text-align: var(--section-text-alignment);
   padding: var(--container-padding-y) var(--container-padding-x);
+}
+
+.dashboard-panel {
+  padding: var(--dashboard-panel-padding);
 }
 
 .posts-container {

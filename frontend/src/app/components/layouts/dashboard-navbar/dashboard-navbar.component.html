@@ -12,11 +12,14 @@
   <input type="checkbox" aria-label="Despliegue de menu principal" id="main-nav-toggler" />
   <form>
     <input placeholder="Buscar" type="search" name="" id="">
+    <button title="Agregar" type="button"><svg-icon class="icon" key="add" /></button>
   </form>
   <ul [className]="this.expanded ? 'expanded-off-canvas' : ''">
-    <a href="/">
-      <img src="logo.svg" alt="Ícono de elefante" width="42" height="42">
-    </a>
+    <li>
+      <a href="/">
+        <img src="logo.svg" alt="Ícono de elefante" width="42" height="42">
+      </a>
+    </li>
     <li>
       <app-link href="/dashboard" [toRoute]=true>
         <svg-icon key="home" class="icon" />

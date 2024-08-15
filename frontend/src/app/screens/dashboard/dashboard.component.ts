@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { DashboardProjectsPanelComponent } from '../../components/panels/dashboard-projects-panel/dashboard-projects-panel.component';
 import { DashboardTechsPanelComponent } from '../../components/panels/dashboard-techs-panel/dashboard-techs-panel.component';
+import { DashboardPostsPanelComponent } from "../../components/panels/dashboard-posts-panel/dashboard-posts-panel.component";
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [DashboardTechsPanelComponent, DashboardProjectsPanelComponent],
+  imports: [DashboardTechsPanelComponent, DashboardProjectsPanelComponent, DashboardPostsPanelComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })

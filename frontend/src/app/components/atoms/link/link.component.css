@@ -34,18 +34,3 @@
     transform: scaleX(1);
   }
 }
-
-@media (width >=992px) {
-  .link {
-    span {
-      background-color: blue;
-      position: absolute;
-    }
-
-    &:hover,
-    &.active,
-    &:focus>span {
-      color: white;
-    }
-  }
-}
