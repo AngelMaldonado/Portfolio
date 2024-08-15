@@ -1,0 +1,4 @@
+<a tabindex="0" [class]="'link' + (active ? ' active' : '')" [attr.href]="!toRoute && href ? href : null"
+  (click)="!toRoute && href.startsWith('#') ? scrollTo(this.href) : navigateTo(href)">
+  <ng-content />
+</a>

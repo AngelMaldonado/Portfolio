@@ -1,0 +1,66 @@
+.navbar {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: var(--navbar-padding);
+  background-color: var(--primary-color-50);
+
+  >ul {
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    display: none;
+    padding: inherit;
+    background-color: inherit;
+
+    &.expanded {
+      display: block;
+      max-height: 1000px;
+      animation: appear .5s;
+    }
+  }
+}
+
+@keyframes appear {
+  from {
+    max-height: 0;
+    opacity: 0;
+  }
+
+  to {
+    max-height: 1000px;
+    opacity: 1;
+  }
+}
+
+@media (width >=992px) {
+  .navbar {
+    >ul {
+      display: block;
+      width: max-content;
+      max-height: max-content;
+      position: relative;
+      float: right;
+      padding: .3rem 0 0 0;
+      overflow: visible;
+
+      >li {
+        float: left;
+        margin: 0;
+
+        &:first-child {
+          margin-top: 0;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    >.toggler {
+      display: none;
+    }
+  }
+}

@@ -17,9 +17,9 @@
   /** PADDINGS **/
   --container-padding-x: 1.5rem;
   --container-padding-y: 7.5rem;
+  --dashboard-panel-padding: calc(var(--navbar-height) + 2rem) 1.5rem 1.5rem 1.5rem;
   --navbar-padding: 1.5rem 2rem;
   --btn-padding: 1rem 2rem;
-  --dashboard-cards-list-padding-bottom: 14rem;
   /** SPACERS **/
   --spacer-1: 2rem;
   --spacer-2: 4rem;
@@ -38,6 +38,7 @@
   :root {
     --navbar-padding: 1.5rem 5rem;
     --landing-tech-card-bg: linear-gradient(340deg, rgba(31, 41, 55, 1) 20%, rgba(31, 41, 55, 1) 55%, rgba(17, 24, 39, 0.3) 100%);
+    --dashboard-panel-padding: calc(var(--navbar-height) + var(--spacer-2)) var(--spacer-2) var(--spacer-2) calc(11rem + var(--spacer-2));
   }
 }
 
@@ -73,6 +74,10 @@ section,
 .container {
   text-align: var(--section-text-alignment);
   padding: var(--container-padding-y) var(--container-padding-x);
+}
+
+.dashboard-panel {
+  padding: var(--dashboard-panel-padding);
 }
 
 .posts-container {
@@ -174,6 +179,78 @@ p {
 }
 
 /** COMPONENTS **/
+.navbar {
+  >input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+  }
+
+  .toggler {
+    cursor: pointer;
+    float: right;
+
+    >svg path {
+      transition: transform .3s ease, color .3s ease;
+    }
+  }
+
+  .toggler:hover,
+  &:has(input[type="checkbox"]:checked),
+  &:has(input[type="checkbox"]:focus) {
+    color: var(--highlight-color-100);
+  }
+
+  &:has(input[type="checkbox"]:focus) .toggler>svg {
+    outline: var(--focus-outline);
+    border-radius: var(--focus-border-radius);
+  }
+
+  &:has(input[type="checkbox"]:checked) .toggler>svg {
+    >path:nth-child(2) {
+      transform: rotate(45deg) translate(25%, -20%);
+    }
+
+    >path:nth-child(3) {
+      transform: rotate(-45deg) translate(-55%, 25%);
+    }
+
+    >path:nth-child(4) {
+      display: none;
+    }
+  }
+
+  >ul {
+    >li {
+      margin: 2rem 0;
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .icon {
+        width: 3rem;
+        height: 3rem;
+        margin-right: 1rem;
+      }
+    }
+  }
+}
+
+@media (width >=992px) {
+  .navbar {
+    >ul {
+      >li .icon {
+        margin: 0;
+      }
+    }
+  }
+}
+
+
 .badge-list {
   display: flex;
   flex-wrap: wrap;

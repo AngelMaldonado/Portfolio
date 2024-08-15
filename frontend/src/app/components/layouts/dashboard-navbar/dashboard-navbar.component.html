@@ -1,0 +1,60 @@
+<nav aria-label="Navegación de dashboard" class="navbar">
+  <label class="toggler" for="main-nav-toggler">
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="42" height="42"
+      viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round"
+      stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M4 6l16 0" />
+      <path d="M4 12l16 0" />
+      <path d="M4 18l16 0" />
+    </svg>
+  </label>
+  <input type="checkbox" aria-label="Despliegue de menu principal" id="main-nav-toggler" />
+  <form>
+    <input placeholder="Buscar" type="search" name="" id="">
+    <button title="Agregar" type="button"><svg-icon class="icon" key="add" /></button>
+  </form>
+  <ul [className]="this.expanded ? 'expanded-off-canvas' : ''">
+    <li>
+      <a href="/">
+        <img src="logo.svg" alt="Ícono de elefante" width="42" height="42">
+      </a>
+    </li>
+    <li>
+      <app-link href="/dashboard" [toRoute]=true>
+        <svg-icon key="home" class="icon" />
+        <span>Inicio</span>
+      </app-link>
+    </li>
+    <li>
+      <app-link href="/dashboard/posts" [toRoute]=true>
+        <svg-icon key="news" class="icon" />
+        <span>Posts</span>
+      </app-link>
+    </li>
+    <li>
+      <app-link href="/dashboard/users" [toRoute]=true>
+        <svg-icon key="user" class="icon" />
+        <span>Usuarios</span>
+      </app-link>
+    </li>
+    <li>
+      <app-link href="/dashboard/projects" [toRoute]=true>
+        <svg-icon key="portfolio" class="icon" />
+        <span>Proyectos</span>
+      </app-link>
+    </li>
+    <li>
+      <app-link href="/dashboard/technologies" [toRoute]=true>
+        <svg-icon key="code" class="icon" />
+        <span>Tecnologías</span>
+      </app-link>
+    </li>
+    <li>
+      <app-link href="#" [toRoute]=true>
+        <svg-icon key="door" class="icon" />
+        <span>Cerrar sesión</span>
+      </app-link>
+    </li>
+  </ul>
+</nav>

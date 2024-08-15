@@ -1,0 +1,145 @@
+.navbar {
+  z-index: 1;
+  position: fixed;
+  width: 100%;
+  height: var(--navbar-height);
+  padding: var(--navbar-padding);
+  display: flex;
+  background-color: var(--primary-color-50);
+
+  .toggler {
+    float: left;
+  }
+
+  >form {
+    width: 85%;
+    max-width: 35rem;
+    height: 100%;
+    position: relative;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+
+    >input {
+      height: 100%;
+      width: 100%;
+      padding-right: 4.5rem;
+    }
+
+    >button {
+      width: 4rem;
+      height: 4rem;
+      position: absolute;
+      right: .5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 0;
+      border-radius: 50%;
+      color: var(--highlight-color-100);
+
+      >.icon {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  >ul {
+    display: none;
+    max-width: 0;
+    height: 100vh;
+    overflow: hidden;
+    padding: inherit;
+    background-color: inherit;
+    transform: translate(-6rem);
+    animation: appear .3s;
+
+    >li {
+      span {
+        display: inline-block;
+        transform: translateY(-1rem);
+      }
+    }
+
+    &.expanded-off-canvas {
+      width: 80%;
+      max-width: 40rem;
+      display: block;
+      transform: translateX(-2rem);
+    }
+  }
+}
+
+@keyframes appear {
+  from {
+    max-width: 0;
+    opacity: 0;
+  }
+
+  to {
+    max-width: 40rem;
+    opacity: 1;
+  }
+}
+
+@media (width >=992px) {
+  .navbar {
+    background-color: transparent;
+
+    >.toggler {
+      display: none;
+    }
+
+    >form {
+      margin-bottom: 0;
+    }
+
+    >ul {
+      width: max-content;
+      height: 90vh;
+      max-width: unset;
+      position: absolute;
+      left: 8rem;
+      top: 55%;
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacer-1);
+      align-items: center;
+      justify-content: start;
+      overflow: visible;
+      padding: 2rem 1rem;
+      border-radius: 2rem;
+      background-color: var(--primary-color-50);
+
+      >li {
+        position: relative;
+        margin: 0;
+
+        span {
+          width: max-content;
+          position: absolute;
+          top: 2rem;
+          left: 50%;
+          padding: .8rem 1rem;
+          opacity: 0;
+          border-radius: 1rem;
+          color: var(--white);
+          background-color: var(--highlight-color-100);
+          transition: left .3s ease, opacity .3s ease;
+        }
+
+        &:last-child {
+          margin-top: auto;
+        }
+
+        &:hover,
+        &:focus-within {
+          span {
+            display: block;
+            opacity: 1;
+            left: 100%;
+          }
+        }
+      }
+    }
+  }
+}
