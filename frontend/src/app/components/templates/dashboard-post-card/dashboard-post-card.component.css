@@ -71,15 +71,3 @@
     }
   }
 }
-
-@media (width >=1200px) {
-  .dashboard-project-card {
-    .dashboard-project-card__content {
-      .content__main {
-        .content__links {
-          flex-direction: row;
-        }
-      }
-    }
-  }
-}
