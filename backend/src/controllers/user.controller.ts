@@ -1,10 +1,14 @@
 import { Request, Response } from "express"
 import User from "../models/user"
+import bcrypt from "bcrypt"
 
 class UserController {
   async Create(req: Request, res: Response) {
     const user = new User(req.body)
     try {
+      if (user.pswd) {
+        user.pswd = await bcrypt.hash(user.pswd, 10)
+      }
       await user.save()
       res.status(201).send(user)
     } catch (error: unknown) {

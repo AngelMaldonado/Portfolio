@@ -6,7 +6,8 @@ Content-Type: application/json
 
 {
   "email": "amaldonadojuarez@gmail.com",
-  "name": "Angel de Jesús Maldonado Juárez"
+  "name": "Angel de Jesús Maldonado Juárez",
+  "pswd": "123456"
 }
 
 ### All
@@ -26,4 +27,4 @@ Content-Type: application/json
 
 ### Delete one
 
-delete {{hostname}}{{endpoint}}/66b8efb78dd13153b9254dc8
+delete {{hostname}}{{endpoint}}/66bfd3afc397158b03046509
