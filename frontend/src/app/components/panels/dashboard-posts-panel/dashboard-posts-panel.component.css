@@ -1,0 +1,7 @@
+.posts {
+  .posts__list {
+    li {
+      margin: var(--spacer-2) 0;
+    }
+  }
+}
