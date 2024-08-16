@@ -1,0 +1,29 @@
+.users {
+  .users__list {
+    li {
+      margin: var(--spacer-2) 0;
+    }
+  }
+}
+
+@media (width >=576px) {
+  .users {
+    .users__list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--spacer-2);
+
+      li {
+        margin: 0;
+      }
+    }
+  }
+}
+
+@media (width >=1200px) {
+  .users {
+    .users__list {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  }
+}
