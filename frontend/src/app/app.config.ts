@@ -23,6 +23,7 @@ import { portfolioIcon } from '../assets/svg/portfolio';
 import { userIcon } from '../assets/svg/user';
 import { addIcon } from '../assets/svg/add';
 import { externalIcon } from '../assets/svg/external';
+import { eyeIcon } from '../assets/svg/eye';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -48,7 +49,8 @@ export const appConfig: ApplicationConfig = {
       portfolioIcon,
       userIcon,
       addIcon,
-      externalIcon
+      externalIcon,
+      eyeIcon
     ])
   ]
 };
