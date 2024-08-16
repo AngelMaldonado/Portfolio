@@ -1,10 +1,12 @@
 import express, { Application } from "express"
 import mongoose from "mongoose"
+import cors from "cors"
 import skillRoutes from "./routes/skill.routes"
 import userRoutes from "./routes/user.routes"
 import projectRoutes from "./routes/project.routes"
 import postRoutes from "./routes/post.routes"
 import commentRoutes from "./routes/comment.routes"
+import authRoutes from "./routes/auth.routes"
 
 class App {
   private readonly app: Application
@@ -30,6 +32,7 @@ class App {
 
   private InitMiddlewares() {
     this.app.use(express.json())
+    this.app.use(cors())
   }
 
   private InitRoutes() {
@@ -38,11 +41,12 @@ class App {
     this.app.use("/api/projects", projectRoutes)
     this.app.use("/api/posts", postRoutes)
     this.app.use("/api/comments", commentRoutes)
+    this.app.use("/api/auth", authRoutes)
   }
 
   async db() {
     try {
-      await mongoose.connect("mongodb://localhost:27017/angelmaldonado")
+      await mongoose.connect(process.env.DATABASE_URL as string)
       console.log("[db] MongoDB is connected")
     } catch (error) {
       console.error("[db] Error connecting to MongoDB")

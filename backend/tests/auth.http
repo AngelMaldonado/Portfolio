@@ -1,0 +1,10 @@
+@endpoint=/api/auth/login
+### Login
+
+post {{hostname}}{{endpoint}}
+Content-Type: application/json
+
+{
+  "email": "amaldonadojuarez@gmail.com",
+  "pswd": "123456"
+}
