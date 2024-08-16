@@ -1,0 +1,50 @@
+.dashboard-user-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacer-1);
+  padding: var(--dashboard-cards-padding);
+  border-radius: var(--dashboard-cards-border-radius);
+  background-color: var(--primary-color-50);
+
+  img {
+    width: 10rem;
+    border-radius: 50%;
+  }
+
+  >h3 {
+    margin-left: 1rem;
+    margin-right: auto;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--spacer-1) * .5);
+  }
+
+  .badges {
+    display: flex;
+    gap: .5rem;
+    position: absolute;
+    bottom: -1rem;
+    display: flex;
+  }
+}
+
+@media (width >=576px) {
+  .dashboard-user-card {
+    flex-direction: column;
+    gap: var(--spacer-1);
+
+    >h3 {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .buttons {
+      flex-direction: row;
+    }
+  }
+}
