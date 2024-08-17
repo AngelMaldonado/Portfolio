@@ -24,22 +24,26 @@
       width: 100%;
       padding-right: 4.5rem;
     }
+  }
 
-    >button {
-      width: 4rem;
-      height: 4rem;
-      position: absolute;
-      right: .5rem;
-      top: 50%;
-      transform: translateY(-50%);
-      padding: 0;
-      border-radius: 50%;
-      color: var(--highlight-color-100);
+  .add-button {
+    position: absolute;
+    right: var(--spacer-2);
+    top: 130%;
+    width: 5.5rem;
+    height: 5.5rem;
+    border-width: 3px;
+    border-color: var(--success-color-100);
+    color: var(--success-color-100);
+    transition: color .3s ease, background-color .3s ease;
 
-      >.icon {
-        width: 100%;
-        height: 100%;
-      }
+    span {
+      display: none;
+    }
+
+    &:hover {
+      background-color: var(--success-color-100);
+      color: var(--white);
     }
   }
 
@@ -80,6 +84,31 @@
   to {
     max-width: 40rem;
     opacity: 1;
+  }
+}
+
+@media (width >=576px) {
+  .navbar {
+    .add-button {
+      width: auto;
+      height: auto;
+      display: flex;
+      align-items: center;
+      border-radius: var(--button-border-radius);
+
+      .icon {
+        width: 3rem;
+        height: 3rem;
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+      }
+
+      span {
+        display: block;
+      }
+    }
   }
 }
 
