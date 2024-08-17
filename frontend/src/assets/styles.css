@@ -5,13 +5,17 @@
   --primary-color-100: #111827;
   --primary-color-50: #1f2937;
   --primary-color-10: #636f7f;
+  --primary-color-10-with-opacity: rgba(99, 111, 127, 0.97);
   --highlight-color-100: #EF4444;
+  --success-color-100: #10B981;
   --landing-tech-card-bg: linear-gradient(0deg, rgb(31, 41, 55, 1) 20%, rgb(17, 24, 39, .3) 100%);
   --white: #fff;
   /** BORDERS **/
   --focus-outline: 1px solid var(--white);
   --focus-border-radius: 2px;
+  --button-border-radius: 2px;
   --dashboard-cards-border-radius: 2rem;
+  --dialog-border-radius: 2rem;
   /** SIZES **/
   --navbar-height: 7.5rem;
   --footer-height: 3.6rem;
@@ -284,7 +288,8 @@ p {
   }
 }
 
-.link {
+.link,
+.button {
   .icon {
     width: 3rem;
     height: 3rem;

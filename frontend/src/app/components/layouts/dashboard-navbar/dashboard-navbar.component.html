@@ -12,8 +12,21 @@
   <input type="checkbox" aria-label="Despliegue de menu principal" id="main-nav-toggler" />
   <form>
     <input placeholder="Buscar" type="search" name="" id="">
-    <button title="Agregar" type="button"><svg-icon class="icon" key="add" /></button>
   </form>
+  <app-modal [id]="'newDialog'">
+    <button class="icon-button add-button" ngProjectAs="trigger">
+      <svg-icon key="add" class="icon" />
+      <span>Nuevo</span>
+    </button>
+    <h3 ngProjectAs="title">Titulo del modal</h3>
+    <div ngProjectAs="content">
+      <form action="">
+        <label for="">Nombre</label>
+        <input type="text">
+        <button>Guardar</button>
+      </form>
+    </div>
+  </app-modal>
   <ul [className]="this.expanded ? 'expanded-off-canvas' : ''">
     <li>
       <a href="/">

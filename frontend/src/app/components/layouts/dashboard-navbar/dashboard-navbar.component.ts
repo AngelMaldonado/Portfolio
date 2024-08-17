@@ -1,11 +1,12 @@
 import { AfterViewInit, Component, ElementRef, HostListener } from '@angular/core';
 import { SvgIconComponent } from '@ngneat/svg-icon';
 import { LinkComponent } from '../../atoms/link/link.component';
+import { ModalComponent } from "../../templates/modal/modal.component";
 
 @Component({
   selector: 'app-dashboard-navbar',
   standalone: true,
-  imports: [LinkComponent, SvgIconComponent],
+  imports: [LinkComponent, SvgIconComponent, ModalComponent],
   templateUrl: './dashboard-navbar.component.html',
   styleUrl: './dashboard-navbar.component.css'
 })
