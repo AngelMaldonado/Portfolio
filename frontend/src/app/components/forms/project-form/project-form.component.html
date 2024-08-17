@@ -1,1 +1,20 @@
-<p>project-form works!</p>
+<form class="crud-form">
+  <label for="startDate">📅 Inicio</label>
+  <input name="startDate" type="date">
+  <label for="endDate">🏁 Término</label>
+  <input name="endDate" type="date">
+  <label for="title">🏷️ Título</label>
+  <input name="title" type="text" placeholder="Analyzer, TEA, AI reader, etc...">
+  <label for="description">🗨️ Descripción</label>
+  <textarea name="description"></textarea>
+  <label for="projectUrl">🚀 URL del proyecto</label>
+  <input name="projectUrl" type="url" placeholder="https://proyecto.com">
+  <label for="repoUrl">🐱 URL del repositorio</label>
+  <input name="repoUrl" type="url" placeholder="https://github.com/User/Repo">
+  <label for="image">🖼️ Imagen del proyecto (url)</label>
+  <input name="image" type="url" placeholder="https://alguna-pagina.com/imagen">
+  <button class="success-button">
+    <svg-icon key="save" class="icon" />
+    <span>Guardar</span>
+  </button>
+</form>

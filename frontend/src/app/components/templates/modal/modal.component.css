@@ -26,6 +26,17 @@ dialog {
       }
     }
   }
+
+  &::-webkit-scrollbar {
+    width: .7rem;
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    cursor: pointer;
+    background-color: var(--highlight-color-100);
+    border-radius: 1rem;
+  }
 }
 
 @media (min-width: 576px) {
