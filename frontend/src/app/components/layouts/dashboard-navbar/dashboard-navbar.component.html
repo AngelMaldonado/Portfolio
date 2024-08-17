@@ -14,17 +14,26 @@
     <input placeholder="Buscar" type="search" name="" id="">
   </form>
   <app-modal [id]="'newDialog'">
-    <button class="icon-button add-button" ngProjectAs="trigger">
+    <button class="icon-button success-button" ngProjectAs="trigger">
       <svg-icon key="add" class="icon" />
       <span>Nuevo</span>
     </button>
-    <h3 ngProjectAs="title">Titulo del modal</h3>
+    <h3 ngProjectAs="title">{{getModalTitle()}}</h3>
     <div ngProjectAs="content">
-      <form action="">
-        <label for="">Nombre</label>
-        <input type="text">
-        <button>Guardar</button>
-      </form>
+      @switch (this.router.url) {
+      @case ('/dashboard/technologies') {
+      <app-technology-form />
+      }
+      @case ('/dashboard/projects') {
+      <app-project-form />
+      }
+      @case ('/dashboard/users') {
+      <app-user-form />
+      }
+      @case ('/dashboard/posts') {
+      <app-post-form />
+      }
+      }
     </div>
   </app-modal>
   <ul [className]="this.expanded ? 'expanded-off-canvas' : ''">

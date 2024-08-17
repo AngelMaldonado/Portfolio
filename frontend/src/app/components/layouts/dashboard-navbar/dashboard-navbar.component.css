@@ -26,24 +26,16 @@
     }
   }
 
-  .add-button {
+  .success-button {
     position: absolute;
     right: var(--spacer-2);
     top: 130%;
     width: 5.5rem;
     height: 5.5rem;
     border-width: 3px;
-    border-color: var(--success-color-100);
-    color: var(--success-color-100);
-    transition: color .3s ease, background-color .3s ease;
 
     span {
       display: none;
-    }
-
-    &:hover {
-      background-color: var(--success-color-100);
-      color: var(--white);
     }
   }
 
@@ -89,7 +81,7 @@
 
 @media (width >=576px) {
   .navbar {
-    .add-button {
+    .success-button {
       width: auto;
       height: auto;
       display: flex;
@@ -108,6 +100,15 @@
       span {
         display: block;
       }
+    }
+  }
+}
+
+@media (width >=768px) {
+  .navbar {
+    .success-button {
+      top: 50%;
+      transform: translateY(-50%);
     }
   }
 }

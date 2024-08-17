@@ -2,7 +2,7 @@
   <ng-content select="trigger"></ng-content>
 </div>
 
-<dialog class="dialog" [id]="id">
+<dialog open class="dialog" [id]="id">
   <header class="dialog__header">
     <ng-content select="title" />
     <button (click)="hideDialog()" class="close-button"><svg-icon class="icon" key="close" /></button>

@@ -31,5 +31,9 @@ dialog {
 @media (min-width: 576px) {
   dialog {
     width: fit-content;
+
+    .dialog__header {
+      gap: var(--spacer-2);
+    }
   }
 }

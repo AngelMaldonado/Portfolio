@@ -197,6 +197,18 @@ p {
 }
 
 /** COMPONENTS **/
+.crud-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacer-1);
+}
+
+@media (width >=576px) {
+  .crud-form {
+    width: 40rem;
+  }
+}
+
 .navbar {
   >input[type="checkbox"] {
     position: absolute;
@@ -315,5 +327,27 @@ p {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+}
+
+.success-button {
+  border-color: var(--success-color-100);
+  color: var(--success-color-100);
+  transition: color .3s ease, background-color .3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  .icon {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  &:hover,
+  &:focus {
+    border-color: var(--success-color-100);
+    background-color: var(--success-color-100);
+    color: var(--white);
   }
 }
