@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { SvgIconComponent } from '@ngneat/svg-icon';
 
 @Component({
   selector: 'app-post-form',
   standalone: true,
-  imports: [],
+  imports: [SvgIconComponent],
   templateUrl: './post-form.component.html',
   styleUrl: './post-form.component.css'
 })
