@@ -1,6 +1,14 @@
 class Post {
-  id?: string
-  title!: string
-  preview!: string
-  published_at!: Date
+  constructor(
+    public slug: string,
+    public title: string,
+    public abstract: string,
+    public imageUrl: string,
+    public markdownUrl: string,
+    public stars: number[] = [],
+    public starsAvg: number = 0,
+    public readonly _id?: string
+  ) { }
 }
+
+export default Post
