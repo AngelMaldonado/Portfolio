@@ -1,8 +1,8 @@
-<form class="crud-form">
+<form class="crud-form" (ngSubmit)="onSubmit()">
   <label for="name">🤖 Tecnología</label>
-  <input name="name" type="text" placeholder="React, Vue, Nextjs, etc...">
+  <input [(ngModel)]="model.name" name="name" type="text" placeholder="React, Vue, Nextjs, etc...">
   <label for="image">🖼️ Imagen (url)</label>
-  <input name="image" type="url" placeholder="https://some-image-url.com/123">
+  <input [(ngModel)]="model.image" name="image" type="url" placeholder="https://some-image-url.com/123">
   <button class="success-button">
     <svg-icon key="save" class="icon" />
     <span>Guardar</span>
