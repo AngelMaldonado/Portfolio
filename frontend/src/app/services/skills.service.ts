@@ -10,6 +10,10 @@ export class SkillsService {
 
   constructor(private http: HttpClient) { }
 
+  getSkills() {
+    return this.http.get<Skill[]>(AppSettings.API_ENDPOINT + '/skills');
+  }
+
   addSkill(skill: Skill) {
     this.http.post(AppSettings.API_ENDPOINT + '/skills', skill)
       .subscribe({

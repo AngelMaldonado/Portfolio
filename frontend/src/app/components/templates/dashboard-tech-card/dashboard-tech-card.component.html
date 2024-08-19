@@ -1,6 +1,8 @@
 <div class="dashboard-tech-card">
-  <img src="https://via.placeholder.com/150" alt="">
-  <h3>Title of tech</h3>
+  <div class="card__image">
+    <img class="max-img" [src]="this.skill.image" [alt]="'Imagen de ' + this.skill.name">
+  </div>
+  <h3>{{this.skill.name}}</h3>
   <div class="buttons">
     <button class="icon-button"><svg-icon class="icon" key="trash"></svg-icon></button>
     <button class="icon-button"><svg-icon class="icon" key="edit"></svg-icon></button>

@@ -3,17 +3,10 @@
     <h1 id="dash-techs">Tecnologías</h1>
   </header>
   <ul class="techs__list">
+    @for (skill of skills; track skill._id) {
     <li>
-      <app-dashboard-tech-card />
+      <app-dashboard-tech-card [skill]="skill" />
     </li>
-    <li>
-      <app-dashboard-tech-card />
-    </li>
-    <li>
-      <app-dashboard-tech-card />
-    </li>
-    <li>
-      <app-dashboard-tech-card />
-    </li>
+    }
   </ul>
 </section>
