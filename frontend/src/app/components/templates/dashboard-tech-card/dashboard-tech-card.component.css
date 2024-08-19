@@ -8,8 +8,13 @@
   padding: var(--dashboard-cards-padding);
   border-radius: var(--dashboard-cards-border-radius);
 
-  >img {
+  >.card__image {
     width: 10rem;
+    height: 10rem;
+
+    img {
+      object-fit: contain;
+    }
   }
 
   >h3 {

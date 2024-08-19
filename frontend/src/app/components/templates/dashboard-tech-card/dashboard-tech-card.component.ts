@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { SvgIconComponent, SvgIcons } from '@ngneat/svg-icon';
-
+import Skill from '../../../models/Skill';
 
 @Component({
   selector: 'app-dashboard-tech-card',
@@ -10,4 +10,5 @@ import { SvgIconComponent, SvgIcons } from '@ngneat/svg-icon';
   styleUrl: './dashboard-tech-card.component.css'
 })
 export class DashboardTechCardComponent {
+  @Input({ required: true }) skill!: Skill;
 }
