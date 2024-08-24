@@ -1,10 +1,14 @@
 <div class="dashboard-tech-card">
   <div class="card__image">
-    <img class="max-img" [src]="this.skill.image" [alt]="'Imagen de ' + this.skill.name">
+    <img class="max-img" [src]="skill.image" [alt]="'Imagen de ' + skill.name">
   </div>
-  <h3>{{this.skill.name}}</h3>
+  <h3>{{skill.name}}</h3>
   <div class="buttons">
-    <button class="icon-button"><svg-icon class="icon" key="trash"></svg-icon></button>
-    <button class="icon-button"><svg-icon class="icon" key="edit"></svg-icon></button>
+    <button class="icon-button" (click)="deleteSkill()">
+      <svg-icon class="icon" key="trash"></svg-icon>
+    </button>
+    <button class="icon-button" (click)="editSkill()">
+      <svg-icon class="icon" key="edit"></svg-icon>
+    </button>
   </div>
 </div>

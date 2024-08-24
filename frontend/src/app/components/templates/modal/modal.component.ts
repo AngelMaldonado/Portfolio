@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { SvgIconComponent } from '@ngneat/svg-icon';
+import { ModalService } from '../../../services/modal.service';
 
 @Component({
   selector: 'app-modal',
@@ -8,16 +9,12 @@ import { SvgIconComponent } from '@ngneat/svg-icon';
   templateUrl: './modal.component.html',
   styleUrl: './modal.component.css'
 })
-export class ModalComponent {
+export class ModalComponent implements OnInit {
   @Input({ required: true }) id!: string;
 
-  showDialog() {
-    const dialog = document.getElementById(this.id) as HTMLDialogElement;
-    dialog.showModal()
-  }
+  constructor(protected modalService: ModalService) { }
 
-  hideDialog() {
-    const dialog = document.getElementById(this.id) as HTMLDialogElement;
-    dialog.close()
+  ngOnInit() {
+    this.modalService.setId(this.id)
   }
 }
