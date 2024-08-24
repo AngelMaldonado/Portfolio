@@ -7,6 +7,7 @@ import { TechnologyComponent } from "../../forms/technology-form/technology.comp
 import { ProjectFormComponent } from "../../forms/project-form/project-form.component";
 import { UserFormComponent } from "../../forms/user-form/user-form.component";
 import { PostFormComponent } from "../../forms/post-form/post-form.component";
+import { ModalService, ModalState } from '../../../services/modal.service';
 
 @Component({
   selector: 'app-dashboard-navbar',
@@ -17,8 +18,11 @@ import { PostFormComponent } from "../../forms/post-form/post-form.component";
 })
 export class DashboardNavbarComponent implements AfterViewInit {
   expanded: boolean = false
+  modalMode: string = 'Create'
 
-  constructor(private elementRef: ElementRef, protected router: Router) { }
+  constructor(private elementRef: ElementRef, private modalService: ModalService, protected router: Router) {
+    modalService.currentState.subscribe((state: ModalState) => { this.modalMode = state.mode })
+  }
 
   ngAfterViewInit(): void {
     const toggler = this.elementRef.nativeElement.querySelector('input[type="checkbox"]') as HTMLInputElement
@@ -42,7 +46,7 @@ export class DashboardNavbarComponent implements AfterViewInit {
   getModalTitle(): string {
     switch (this.router.url) {
       case '/dashboard/technologies':
-        return 'Nueva tecnología'
+        return `${this.modalMode} tecnología`
       case '/dashboard/projects':
         return 'Nuevo proyecto'
       case '/dashboard/users':

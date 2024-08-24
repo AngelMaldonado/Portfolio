@@ -3,8 +3,21 @@
   <input [(ngModel)]="model.name" name="name" type="text" placeholder="React, Vue, Nextjs, etc...">
   <label for="image">🖼️ Imagen (url)</label>
   <input [(ngModel)]="model.image" name="image" type="url" placeholder="https://some-image-url.com/123">
+
+  @if (creating()) {
   <button class="success-button">
     <svg-icon key="save" class="icon" />
     <span>Guardar</span>
   </button>
+  } @else if (editing()) {
+  <button class="warning-button">
+    <svg-icon key="edit" class="icon" />
+    <span>Actualizar</span>
+  </button>
+  } @else if (deleting()) {
+  <button class="danger-button">
+    <svg-icon class="icon" key="trash"></svg-icon>
+    <span>Eliminar</span>
+  </button>
+  }
 </form>
