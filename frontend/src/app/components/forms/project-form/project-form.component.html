@@ -1,20 +1,34 @@
-<form class="crud-form">
+<form (ngSubmit)="onSubmit()" class="crud-form">
   <label for="startDate">📅 Inicio</label>
-  <input name="startDate" type="date">
+  <input [value]="model.startDate | date: 'yyyy-MM-dd'" (input)="model.startDate=parseDate($event.target)"
+    name="startDate" type="date">
   <label for="endDate">🏁 Término</label>
-  <input name="endDate" type="date">
+  <input [value]="model.endDate | date: 'yyyy-MM-dd'" (input)="model.endDate=parseDate($event.target)" name="endDate"
+    type="date">
   <label for="title">🏷️ Título</label>
-  <input name="title" type="text" placeholder="Analyzer, TEA, AI reader, etc...">
+  <input [(ngModel)]="model.title" name="title" type="text" placeholder="Analyzer, TEA, AI reader, etc...">
   <label for="description">🗨️ Descripción</label>
-  <textarea name="description"></textarea>
+  <textarea [(ngModel)]="model.description" name="description"></textarea>
   <label for="projectUrl">🚀 URL del proyecto</label>
-  <input name="projectUrl" type="url" placeholder="https://proyecto.com">
+  <input [(ngModel)]="model.projectUrl" name="projectUrl" type="url" placeholder="https://proyecto.com">
   <label for="repoUrl">🐱 URL del repositorio</label>
-  <input name="repoUrl" type="url" placeholder="https://github.com/User/Repo">
+  <input [(ngModel)]="model.repoUrl" name="repoUrl" type="url" placeholder="https://github.com/User/Repo">
   <label for="image">🖼️ Imagen del proyecto (url)</label>
-  <input name="image" type="url" placeholder="https://alguna-pagina.com/imagen">
+  <input [(ngModel)]="model.image" name="image" type="url" placeholder="https://alguna-pagina.com/imagen">
+  @if (creating()) {
   <button class="success-button">
     <svg-icon key="save" class="icon" />
     <span>Guardar</span>
   </button>
+  } @else if (editing()) {
+  <button class="warning-button">
+    <svg-icon key="edit" class="icon" />
+    <span>Actualizar</span>
+  </button>
+  } @else if (deleting()) {
+  <button class="danger-button">
+    <svg-icon class="icon" key="trash"></svg-icon>
+    <span>Eliminar</span>
+  </button>
+  }
 </form>

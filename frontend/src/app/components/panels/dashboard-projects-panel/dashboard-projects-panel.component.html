@@ -3,11 +3,10 @@
     <h1 id="dash-projects">Proyectos</h1>
   </header>
   <ul class="projects__list">
+    @for (project of projects; track project._id) {
     <li>
-      <app-dashboard-project-card />
+      <app-dashboard-project-card [project]="project" />
     </li>
-    <li>
-      <app-dashboard-project-card />
-    </li>
+    }
   </ul>
 </section>

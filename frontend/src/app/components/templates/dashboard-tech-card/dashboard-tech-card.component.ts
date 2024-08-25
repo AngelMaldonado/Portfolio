@@ -13,15 +13,14 @@ import { ModalMode, ModalService } from '../../../services/modal.service';
 })
 export class DashboardTechCardComponent {
   @Input({ required: true }) skill!: Skill;
-  @Output() submitted = new EventEmitter<void>()
 
   constructor(private modalService: ModalService) { }
 
   editSkill() {
-    this.modalService.show(this.skill, ModalMode.edit, 'navbarDialog');
+    this.modalService.show(this.skill, ModalMode.edit);
   }
 
   deleteSkill() {
-    this.modalService.show(this.skill, ModalMode.delete, 'navbarDialog');
+    this.modalService.show(this.skill, ModalMode.delete);
   }
 }

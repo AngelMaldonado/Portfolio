@@ -3,17 +3,10 @@
     <h1 id="dash-users">Usuarios</h1>
   </header>
   <ul class="users__list">
+    @for (user of users ; track user._id) {
     <li>
-      <app-dashboard-user-card />
+      <app-dashboard-user-card [user]="user" />
     </li>
-    <li>
-      <app-dashboard-user-card />
-    </li>
-    <li>
-      <app-dashboard-user-card />
-    </li>
-    <li>
-      <app-dashboard-user-card />
-    </li>
+    }
   </ul>
 </section>

@@ -4,6 +4,9 @@
   "newProjectRoot": "projects",
   "projects": {
     "angel-maldonado": {
+      "i18n": {
+        "sourceLocale": "es-MX"
+      },
       "projectType": "application",
       "schematics": {},
       "root": "",
