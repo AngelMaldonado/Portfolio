@@ -1,14 +1,27 @@
-<form class="crud-form">
+<form (submit)="onSubmit()" class="crud-form">
   <label for="title">🏷️ Título</label>
-  <input name="title" type="text" placeholder="Tutorial de.., Error de.., etc...">
+  <input [(ngModel)]="model.title" name="title" type="text" placeholder="Tutorial de.., Error de.., etc...">
   <label for="abstract">✍️ Resumen</label>
-  <textarea name="abstract"></textarea>
+  <textarea [(ngModel)]="model.abstract" name="abstract"></textarea>
   <label for="imageUrl">🖼️ Imagen del post (url)</label>
-  <input name="imageUrl" type="url" placeholder="https://alguna-pagina.com/imagen">
+  <input [(ngModel)]="model.imageUrl" name="imageUrl" type="url" placeholder="https://alguna-pagina.com/imagen">
   <label for="markdownUrl">📄 Markdown (url)</label>
-  <input name="markdownUrl" type="url" placeholder="https://alguna-pagina.com/markdown.md">
+  <input [(ngModel)]="model.markdownUrl" name="markdownUrl" type="url"
+    placeholder="https://alguna-pagina.com/markdown.md">
+  @if (creating()) {
   <button class="success-button">
     <svg-icon key="save" class="icon" />
     <span>Guardar</span>
   </button>
+  } @else if (editing()) {
+  <button class="warning-button">
+    <svg-icon key="edit" class="icon" />
+    <span>Actualizar</span>
+  </button>
+  } @else if (deleting()) {
+  <button class="danger-button">
+    <svg-icon class="icon" key="trash"></svg-icon>
+    <span>Eliminar</span>
+  </button>
+  }
 </form>
