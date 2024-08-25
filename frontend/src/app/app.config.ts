@@ -26,9 +26,11 @@ import { externalIcon } from '../assets/svg/external';
 import { eyeIcon } from '../assets/svg/eye';
 import { closeIcon } from '../assets/svg/close';
 import { provideHttpClient } from '@angular/common/http';
+import { DatePipe } from '@angular/common';
 
 export const appConfig: ApplicationConfig = {
   providers: [
+    DatePipe,
     provideHttpClient(),
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),

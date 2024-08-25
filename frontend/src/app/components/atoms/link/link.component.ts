@@ -12,6 +12,7 @@ export class LinkComponent {
   @Input() href: string = '#';
   @Input() active: boolean = false;
   @Input() toRoute: boolean = false
+  @Input() blank: boolean = false
 
   constructor(private router: Router) { }
 
