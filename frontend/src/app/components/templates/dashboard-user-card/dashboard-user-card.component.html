@@ -1,9 +1,9 @@
 <div class="dashboard-user-card">
   <img class="max-img" src="https://via.placeholder.com/150" alt="">
-  <h3>User name</h3>
+  <h3>{{user.name}}</h3>
   <div class="buttons">
-    <button class="icon-button"><svg-icon class="icon" key="trash"></svg-icon></button>
-    <button class="icon-button"><svg-icon class="icon" key="edit"></svg-icon></button>
+    <button (click)="deleteUser()" class="icon-button"><svg-icon class="icon" key="trash"></svg-icon></button>
+    <button (click)="editUser()" class="icon-button"><svg-icon class="icon" key="edit"></svg-icon></button>
   </div>
   <div class="badges">
     <app-badge>Comentarios: </app-badge>

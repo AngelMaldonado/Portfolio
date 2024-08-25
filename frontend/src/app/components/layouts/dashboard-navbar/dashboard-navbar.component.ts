@@ -48,11 +48,11 @@ export class DashboardNavbarComponent implements AfterViewInit {
       case '/dashboard/technologies':
         return `${this.modalMode} tecnología`
       case '/dashboard/projects':
-        return 'Nuevo proyecto'
+        return `${this.modalMode} proyecto`
       case '/dashboard/users':
-        return 'Nuevo usuario'
+        return `${this.modalMode} usuario`
       case '/dashboard/posts':
-        return 'Nuevo post'
+        return `${this.modalMode} post`
     }
     return '🤔'
   }
