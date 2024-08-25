@@ -3,11 +3,10 @@
     <h1 id="dash-posts">Posts</h1>
   </header>
   <ul class="posts__list">
+    @for(post of posts; track post._id) {
     <li>
-      <app-dashboard-post-card />
+      <app-dashboard-post-card [post]="post" />
     </li>
-    <li>
-      <app-dashboard-post-card />
-    </li>
+    }
   </ul>
 </section>
