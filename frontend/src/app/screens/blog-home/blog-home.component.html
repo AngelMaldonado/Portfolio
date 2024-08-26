@@ -12,7 +12,7 @@
 </section>
 
 <section aria-label="Publicaciones" class="posts-container">
-  <app-blog-post-card />
-  <hr>
-  <app-blog-post-card />
+  @for(post of posts; track post._id) {
+  <app-blog-post-card [post]="post"></app-blog-post-card>
+  }
 </section>

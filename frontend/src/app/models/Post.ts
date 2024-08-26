@@ -5,6 +5,7 @@ class Post {
     public abstract: string,
     public imageUrl: string,
     public markdownUrl: string,
+    public updatedAt?: Date,
     public stars: number[] = [],
     public starsAvg: number = 0,
     public readonly _id?: string
