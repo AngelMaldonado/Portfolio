@@ -11,5 +11,4 @@ import { BlogPostCardComponent } from '../../components/templates/blog-post-card
   styleUrl: './blog-profile.component.css'
 })
 export class BlogProfileComponent {
-
 }
