@@ -28,12 +28,9 @@
   <h2 id="habilidades">Habilidades</h2>
   <p>Además de estas habilidades, tengo experiencia trabajando en equipo siguiendo la metología SCRUM.</p>
   <div role="group" class="skills__container">
-    <app-landing-tech-card />
-    <app-landing-tech-card />
-    <app-landing-tech-card />
-    <app-landing-tech-card />
-    <app-landing-tech-card />
-    <app-landing-tech-card />
+    @for (tech of techs; track tech._id) {
+    <app-landing-tech-card [tech]="tech" />
+    }
   </div>
 </section>
 
@@ -41,10 +38,11 @@
   <h2 id="proyectos">Experiencia</h2>
   <p>Estos son algunos de los proyectos universitarios y personales en los que trabajé.</p>
   <ul aria-label="Lista de proyectos">
-    <li><app-landing-project-card /></li>
-    <li><app-landing-project-card /></li>
-    <li><app-landing-project-card /></li>
-    <li><app-landing-project-card /></li>
+    @for (project of projects; track project._id) {
+    <li>
+      <app-landing-project-card [project]="project" />
+    </li>
+    }
   </ul>
 </section>
 

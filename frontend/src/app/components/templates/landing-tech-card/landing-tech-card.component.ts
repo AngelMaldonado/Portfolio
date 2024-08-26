@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import Skill from '../../../models/Skill';
 
 @Component({
   selector: 'app-landing-tech-card',
@@ -8,6 +9,5 @@ import { Component, Input } from '@angular/core';
   styleUrl: './landing-tech-card.component.css'
 })
 export class LandingTechCardComponent {
-  @Input() tech: string = 'Some Tech';
-  @Input() image: string = 'https://via.placeholder.com/150';
+  @Input({ required: true }) tech!: Skill;
 }
