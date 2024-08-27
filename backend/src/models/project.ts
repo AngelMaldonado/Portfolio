@@ -6,7 +6,7 @@ const projectSchema = new Schema({
   title: { type: String, required: true, unique: true },
   description: { type: String, required: true },
   projectUrl: { type: String, unique: true },
-  repoUrl: { type: String, unique: true },
+  repoUrl: { type: String },
   image: { type: String, required: true }
 }, { versionKey: false })
 
