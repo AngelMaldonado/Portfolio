@@ -4,6 +4,6 @@ const userSchema = new Schema({
   email: { type: String, required: true, unique: true },
   name: { type: String, required: true },
   pswd: { type: String, default: null }
-}, { versionKey: false })
+}, { versionKey: false, timestamps: true })
 
 export default mongoose.model("User", userSchema)
