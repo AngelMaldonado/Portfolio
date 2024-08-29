@@ -19,6 +19,10 @@ export class PostsService {
     return this.changed as Observable<Post>
   }
 
+  getPost(id: string) {
+    return this.http.get<Post>(AppSettings.API_ENDPOINT + this.endpoint + `/${id}`)
+  }
+
   getPosts() {
     return this.http.get<Post[]>(AppSettings.API_ENDPOINT + this.endpoint);
   }
