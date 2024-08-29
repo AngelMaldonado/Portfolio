@@ -8,21 +8,18 @@
       <li><app-badge>etiqueta1</app-badge></li>
     </ul>
   </nav>
-  <h2 id="post-title">Título del post</h2>
+  <h2 id="post-title">{{post.title}}</h2>
   <div class="post-info">
-    <p>~ AngelMaldonado ~ Actualizado 28 de marzo de 2024</p>
+    <p>~ AngelMaldonado ~ Actualizado {{post.updatedAt | date:'MMMM yyyy'}}</p>
     <app-stars-rating class="post-info__stars" />
   </div>
 </header>
 <article aria-label="Post" class="container">
   <figure>
-    <img class="max-img" src="https://placehold.co/600x400">
+    <img class="max-img" [src]="post.imageUrl">
   </figure>
   <div class="content">
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam at velit est, quis nihil unde sunt necessitatibus
-      ea cum quisquam nemo magni quam tempore, sed voluptas nobis deserunt mollitia quo.
-    </p>
+    <p>{{post.markdownUrl}}</p>
   </div>
 </article>
 <hr>

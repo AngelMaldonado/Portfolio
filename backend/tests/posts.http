@@ -12,6 +12,9 @@ Content-Type: application/json
   "markdownUrl": "https://raw.githubusercontent.com/..."
 }
 
+### One
+get {{hostname}}{{endpoint}}/66b8f5b41d39186008c7dce3
+
 ### All
 
 get {{hostname}}{{endpoint}}
