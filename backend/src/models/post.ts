@@ -1,4 +1,4 @@
-import mongoose, { Schema } from "mongoose"
+import mongoose, { Schema, Types } from "mongoose"
 
 const postSchema = new Schema({
   slug: { type: String, required: true, unique: true },
