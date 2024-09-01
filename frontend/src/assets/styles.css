@@ -6,6 +6,7 @@
   --primary-color-50: #1f2937;
   --primary-color-10: #636f7f;
   --primary-color-10-with-opacity: rgba(99, 111, 127, 0.97);
+  --primary-color-50-with-opacity: rgba(31, 41, 55, 0.97);
   --warning-color-100: #F59E0B;
   --danger-color-100: #f50f0b;
   --highlight-color-100: #EF4444;
@@ -27,6 +28,7 @@
   --dashboard-panel-padding: calc(var(--navbar-height) + 2rem) 1.5rem 1.5rem 1.5rem;
   --dashboard-cards-padding: 2rem;
   --navbar-padding: 1.5rem 2rem;
+  --navbar-padding-blur: 1.2rem 1.8rem;
   --btn-padding: 1rem 2rem;
   /** SPACERS **/
   --spacer-1: 2rem;
