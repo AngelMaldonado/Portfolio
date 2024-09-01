@@ -1,16 +1,19 @@
 @endpoint=/api/posts
-### Create
 
+### Create
 post {{hostname}}{{endpoint}}
 Content-Type: application/json
 
 {
-  "slug": "how-to-create-a-blog",
-  "title": "How to create a blog",
-  "abstract": "This is a tutorial on how to create a blog",
-  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
-  "markdownUrl": "https://raw.githubusercontent.com/..."
+  "slug": "another-blog-post",
+  "title": "Another blog post",
+  "abstract": "Another blog post",
+  "imageUrl": "https://images.unsplash.com/photo-1719937050792-a6a15d899281?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxfHx8ZW58MHx8fHx8",
+  "markdownUrl": "https://raw.githubusercontent.com/"
 }
+
+### Comments
+get {{hostname}}{{endpoint}}/66d3d1e6243064239bb6eae9/comments
 
 ### One
 get {{hostname}}{{endpoint}}/66b8f5b41d39186008c7dce3

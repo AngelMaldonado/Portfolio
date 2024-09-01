@@ -3,7 +3,7 @@ import mongoose, { Schema, Types } from "mongoose"
 const commentSchema = new Schema({
   stars: { type: Number, required: true },
   comment: { type: String, required: true },
-  post: { type: Types.ObjectId, ref: "Comment", required: true },
+  post: { type: Types.ObjectId, ref: "Post", required: true },
   user: { type: Types.ObjectId, ref: "User", required: true }
 }, { versionKey: false, timestamps: true })
 

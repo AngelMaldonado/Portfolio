@@ -14,6 +14,7 @@ class PostRoutes {
   private Init() {
     this.router.get("/", this.postController.All.bind(this.postController))
     this.router.get("/:id", this.postController.Get.bind(this.postController))
+    this.router.get("/:id/comments", this.postController.Comments.bind(this.postController))
     this.router.post("/", this.postController.Create.bind(this.postController))
     this.router.put("/", this.postController.UpdateOne.bind(this.postController))
     this.router.delete("/:id", this.postController.DeleteOne.bind(this.postController))

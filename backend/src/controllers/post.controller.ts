@@ -1,5 +1,6 @@
 import { Request, Response } from "express"
 import Post from "../models/post"
+import Comment from "../models/comment"
 
 class PostController {
   async Create(req: Request, res: Response) {
@@ -16,6 +17,15 @@ class PostController {
     try {
       const post = await Post.findById(req.params.id)
       res.status(200).send(post)
+    } catch (error: unknown) {
+      throw new Error(error as string)
+    }
+  }
+
+  async Comments(req: Request, res: Response) {
+    try {
+      const comments = await Comment.find({ post: req.params.id })
+      res.status(200).send(comments)
     } catch (error: unknown) {
       throw new Error(error as string)
     }
