@@ -1,0 +1,39 @@
+<header aria-labelledby="post-title" class="container navbar-on-top">
+  <nav aria-label="Navegación de la publicación" class="post-navbar">
+    <a tabindex="0" class="button" (click)="goBack()">Volver</a>
+    <ul aria-label="Etiquetas de la publicación" class="badge-list">
+      <li><app-badge>etiqueta1</app-badge></li>
+      <li><app-badge>etiqueta1</app-badge></li>
+      <li><app-badge>etiqueta1</app-badge></li>
+      <li><app-badge>etiqueta1</app-badge></li>
+    </ul>
+  </nav>
+  <h2 id="post-title">{{post.title}}</h2>
+  <div class="post-info">
+    <p>~ AngelMaldonado ~ Actualizado {{post.updatedAt | date:'MMMM yyyy'}}</p>
+    <!-- <app-stars-rating class="post-info__stars" /> -->
+  </div>
+</header>
+<article aria-label="Post" class="container">
+  <figure>
+    <img class="max-img" [src]="post.imageUrl">
+  </figure>
+  <div class="content">
+    <p>{{post.markdownUrl}}</p>
+  </div>
+</article>
+<hr>
+<section aria-labelledby="comentarios" class="comments">
+  <h3 id="comentarios">Comentarios (xx)</h3>
+  <app-comment-form [post]="post" />
+  <ul aria-label="Lista de comentarios">
+    @for(comment of comments; track comment._id) {
+    <li>
+      <div class="user-pic">
+        <img class="max-img" src="https://placehold.co/600x400" alt="user-avatar#">
+      </div>
+      <p>{{comment.comment}}</p>
+    </li>
+    }
+  </ul>
+</section>
