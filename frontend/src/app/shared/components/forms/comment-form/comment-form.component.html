@@ -1,0 +1,11 @@
+<form (ngSubmit)="onSubmit()" aria-label="Agrega tu comentario" class="user-comment-form">
+  <div class="user-pic">
+    <img class="max-img" src="https://placehold.co/600x400" alt="avatar">
+  </div>
+  <fieldset>
+    <label for="comment">Deja tu comentario</label>
+    <textarea [(ngModel)]="comment.comment" name="comment" cols="30" rows="10"></textarea>
+    <app-stars-rating (starsChange)="onStarsChange($event)" class="stars" />
+    <button type="submit">Enviar</button>
+  </fieldset>
+</form>
