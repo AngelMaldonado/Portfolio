@@ -36,6 +36,9 @@
   /** TEXT **/
   --section-text-alignment: center;
   --btn-fs: 1.6rem;
+  /** EFFECTS **/
+  --landing-card-rotation-x: 0deg;
+  --landing-card-rotation-y: 0deg;
 }
 
 @media (width >=768px) {
