@@ -5,6 +5,7 @@
   width: 100%;
   padding: var(--navbar-padding);
   background-color: var(--primary-color-50);
+  transition: padding .3s ease, background-color .3s ease;
 
   >ul {
     width: 100%;
@@ -12,13 +13,21 @@
     overflow: hidden;
     display: none;
     padding: inherit;
-    background-color: inherit;
 
     &.expanded {
       display: block;
       max-height: 1000px;
       animation: appear .5s;
     }
+  }
+
+  li .link {
+    background-color: inherit;
+  }
+
+  &.blur {
+    background-color: var(--primary-color-50-with-opacity);
+    padding: var(--navbar-padding-blur);
   }
 }
 

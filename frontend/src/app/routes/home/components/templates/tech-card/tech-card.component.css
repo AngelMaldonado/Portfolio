@@ -1,0 +1,63 @@
+.landing-tech-card {
+  height: 30rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  /* background: var(--landing-tech-card-bg); */
+  background-color: var(--primary-color-100);
+  position: relative;
+  transform: perspective(5000px) rotateY(var(--landing-card-rotation-y)) rotateX(var(--landing-card-rotation-x));
+  transform-style: preserve-3d;
+
+  .img-container {
+    width: 70%;
+    max-width: 16rem;
+    position: relative;
+    top: -2rem;
+  }
+
+  >h3 {
+    margin-top: var(--spacer-1);
+    padding: 0 1rem 2rem 1rem;
+  }
+}
+
+.landing-tech-card::before,
+.landing-tech-card::after {
+  content: "";
+  position: absolute;
+  border-radius: inherit;
+}
+
+.landing-tech-card::before {
+  inset: .75rem;
+  background: black;
+  filter: blur(15px);
+  opacity: .5;
+  transform: translateZ(-39px);
+}
+
+.landing-tech-card::after {
+  inset: -1rem;
+  background: linear-gradient(-45deg, red, blue);
+  transform: translateZ(-100px);
+}
+
+@media (width >=992px) {
+  .landing-tech-card {
+    >img {
+      position: relative;
+      width: 30%;
+      bottom: 3rem;
+    }
+  }
+}
+
+@media (width >=1200px) {
+  .landing-tech-card {
+    h3 {
+      margin-bottom: var(--spacer-2);
+    }
+  }
+}

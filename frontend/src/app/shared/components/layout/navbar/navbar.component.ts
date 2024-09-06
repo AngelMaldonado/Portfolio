@@ -16,6 +16,7 @@ export class NavbarComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     const toggler = this.elementRef.nativeElement.querySelector('input[type="checkbox"]') as HTMLInputElement
+    const navbar = this.elementRef.nativeElement.querySelector('.navbar') as HTMLElement
     if (window.innerWidth > 992)
       toggler.tabIndex = -1
     toggler.addEventListener('change', () => this.expanded = toggler.checked);
@@ -30,6 +31,16 @@ export class NavbarComponent implements AfterViewInit {
       toggler.tabIndex = -1
     } else {
       toggler.tabIndex = 0
+    }
+  }
+
+  @HostListener('window:scroll', ['$event'])
+  onScroll(event: any) {
+    const navbar = this.elementRef.nativeElement.querySelector('.navbar') as HTMLElement
+    if (window.scrollY > navbar.clientHeight) {
+      navbar.classList.add('blur')
+    } else if (window.scrollY <= navbar.clientHeight) {
+      navbar.classList.remove('blur')
     }
   }
 
