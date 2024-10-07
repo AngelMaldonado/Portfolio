@@ -4,10 +4,11 @@
 <app-navbar />
 }
 
-<main aria-label="Contenido principal" [className]="!router.url.includes('dashboard') ? '' : 'vh-100'">
+<main aria-label="Contenido principal" [className]="!router.url.includes('dashboard') &&
+  !router.url.includes('auth') ? '' : 'vh-100'">
   <router-outlet />
 </main>
 
-@if (!this.router.url.includes('dashboard')) {
+@if (!this.router.url.includes('dashboard') && !this.router.url.includes('auth')) {
 <app-footer />
 }

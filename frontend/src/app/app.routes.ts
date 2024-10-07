@@ -13,4 +13,8 @@ export const routes: Routes = [
     path: 'dashboard',
     loadChildren: () => import('./routes/admin/admin.routes').then(m => m.AdminRoutes)
   },
+  {
+    path: 'auth',
+    loadChildren: () => import('./routes/auth/auth.routes').then(m => m.AuthRoutes)
+  },
 ];

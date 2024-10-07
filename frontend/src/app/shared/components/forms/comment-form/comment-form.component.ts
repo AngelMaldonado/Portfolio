@@ -18,7 +18,7 @@ export class CommentFormComponent implements OnInit {
   constructor(private commentService: CommentsService) { }
 
   ngOnInit(): void {
-    this.comment = new Comment(0, "", this.post, new User("amald@gmail.com", "Angel", undefined, undefined, undefined, "66d0f9a757764243f08a785a"))
+    this.comment = new Comment(0, "", this.post, new User("amald@gmail.com", "Angel", undefined, undefined, undefined, undefined, "66d0f9a757764243f08a785a"))
   }
 
   onStarsChange(stars: number) {

@@ -23,7 +23,6 @@ export class PostComponent {
     this.postService.getComments(this.activatedRoute.snapshot.params['id'])
       .subscribe(comments => {
         this.comments = comments
-        console.log('Comments: ', comments)
       })
   }
 

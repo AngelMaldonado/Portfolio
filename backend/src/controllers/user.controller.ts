@@ -1,6 +1,6 @@
+import bcrypt from "bcrypt"
 import { Request, Response } from "express"
 import User from "../models/user"
-import bcrypt from "bcrypt"
 
 class UserController {
   async Create(req: Request, res: Response) {
@@ -12,7 +12,11 @@ class UserController {
       await user.save()
       res.status(201).send(user)
     } catch (error: unknown) {
-      throw new Error(error as string)
+      if (error instanceof Error) {
+        if (error.message.startsWith("E11000")) {
+          res.status(409).send({ message: "El correo ya está en uso" })
+        }
+      }
     }
   }
 
@@ -34,7 +38,11 @@ class UserController {
         res.status(200).send(user)
       }
     } catch (error: unknown) {
-      throw new Error(error as string)
+      if (error instanceof Error) {
+        if (error.message.startsWith("E11000")) {
+          res.status(409).send({ message: "El correo ya está en uso" })
+        }
+      }
     }
   }
 

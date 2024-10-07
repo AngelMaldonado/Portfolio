@@ -24,7 +24,9 @@
     } @else if (this.router.url == '/blog') {
     <li><app-link href="/" [toRoute]=true>Volver</app-link></li>
     <li><app-link href="/admin" [toRoute]=true>Admin</app-link></li>
-    <li><app-link href="/login" [toRoute]=true>Login</app-link></li>
+    <li><app-link href="/auth/login" [toRoute]=true>Login</app-link></li>
+    } @else if (this.router.url.includes('/auth')) {
+    <li><app-link href="/blog" [toRoute]=true>Volver</app-link></li>
     }
   </ul>
 </nav>

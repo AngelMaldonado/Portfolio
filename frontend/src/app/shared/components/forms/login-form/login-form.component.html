@@ -1,0 +1,13 @@
+<form (submit)="onSubmit($event)" aria-label="Inicia sesión" class="login-form">
+  <fieldset>
+    <h3>Iniciar Sesión</h3>
+    <label for="email">Correo</label>
+    <input [(ngModel)]="user.email" type="email" name="email" placeholder="📧 Correo">
+    <label for="pswd">Contraseña</label>
+    <input [(ngModel)]="user.pswd" type="password" name="pswd" placeholder="🔒 Contraseña">
+    <div class="buttons">
+      <app-link href="auth/register" [toRoute]=true>Registrarse</app-link>
+      <button type="submit">Iniciar Sesión</button>
+    </div>
+  </fieldset>
+</form>
