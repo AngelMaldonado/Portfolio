@@ -50,21 +50,32 @@ hr {
   text-align: center;
 
   >ul {
+    display: flex;
+    flex-direction: column;
+
     >li {
       text-align: start;
       display: flex;
+      justify-content: start;
+      align-items: center;
       gap: var(--spacer-1);
       margin: var(--spacer-2) 0;
 
-      >.user-pic {
+      .user-pic {
         width: 5rem;
         min-width: 5rem;
         height: 5rem;
+        margin-bottom: .5rem;
+      }
+
+      >p {
+        flex: 1;
       }
 
       &:first-child,
       &:last-child {
         margin-top: 0;
+        margin-bottom: 0;
       }
 
       &:last-child {
@@ -84,6 +95,10 @@ hr {
 
   .comments {
     text-align: start;
+
+    .comments-list {
+      margin: 0 var(--spacer-3);
+    }
   }
 
   .user-comment-form {

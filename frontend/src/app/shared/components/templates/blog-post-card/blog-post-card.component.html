@@ -7,7 +7,7 @@
     <p class="post-content__preview">{{post.abstract}}</p>
     <div class="post-content__footer">
       <app-link [href]="'/blog/post/' + post._id" [toRoute]=true>Ver post</app-link>
-      <span>{{post.updatedAt | date:'mediumDate'}}</span>
+      <span>📅 {{post.updatedAt | date:'mediumDate'}}</span>
     </div>
   </div>
 </article>

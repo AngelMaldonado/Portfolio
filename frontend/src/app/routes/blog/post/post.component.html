@@ -1,12 +1,12 @@
 <header aria-labelledby="post-title" class="container navbar-on-top">
   <nav aria-label="Navegación de la publicación" class="post-navbar">
     <a tabindex="0" class="button" (click)="goBack()">Volver</a>
-    <ul aria-label="Etiquetas de la publicación" class="badge-list">
+    <!-- <ul aria-label="Etiquetas de la publicación" class="badge-list">
       <li><app-badge>etiqueta1</app-badge></li>
       <li><app-badge>etiqueta1</app-badge></li>
       <li><app-badge>etiqueta1</app-badge></li>
       <li><app-badge>etiqueta1</app-badge></li>
-    </ul>
+    </ul> -->
   </nav>
   <h2 id="post-title">{{post.title}}</h2>
   <div class="post-info">
@@ -26,11 +26,14 @@
 <section aria-labelledby="comentarios" class="comments">
   <h3 id="comentarios">Comentarios (xx)</h3>
   <app-comment-form [post]="post" />
-  <ul aria-label="Lista de comentarios">
+  <ul aria-label="Lista de comentarios" class="comments-list">
     @for(comment of comments; track comment._id) {
     <li>
-      <div class="user-pic">
-        <img class="max-img" src="https://placehold.co/600x400" alt="user-avatar#">
+      <div>
+        <div class="user-pic">
+          <img class="max-img" src="https://placehold.co/600x400" alt="user-avatar#">
+        </div>
+        <span class="stars">⭐{{comment.stars}}</span>
       </div>
       <p>{{comment.comment}}</p>
     </li>
