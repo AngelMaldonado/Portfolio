@@ -15,4 +15,10 @@ export class AuthService {
   login(user: User) {
     return this.http.post(AppSettings.API_ENDPOINT + this.loginEndpoint, user)
   }
+
+  getUser() {
+    if (localStorage.getItem('user'))
+      return JSON.parse(localStorage.getItem('user')!) as User
+    else return null
+  }
 }

@@ -1,7 +1,7 @@
 import { Request, Response } from "express"
 import User from "../models/user"
 import bcrypt from "bcrypt"
-import jwd from "jsonwebtoken"
+import jwt from "jsonwebtoken"
 
 class AuthController {
   async Login(req: Request, res: Response) {
@@ -10,14 +10,15 @@ class AuthController {
 
     if (user && user.pswd && bcrypt.compareSync(pswd, user.pswd)) {
       res.status(200).send({
-        token: jwd.sign(
-          { email: user.email },
+        _id: user.id,
+        token: jwt.sign(
+          { _id: user._id },
           process.env.JWT_SECRET as string,
           { expiresIn: "1h" }
         )
       })
     } else {
-      res.status(401).send({ message: "Invalid email or password" })
+      res.status(401).send({ message: "Correo o contraseña inválidos" })
     }
   }
 }

@@ -9,13 +9,12 @@ const authMiddleware = (req: Request, res: Response, next: NextFunction) => {
   }
 
   try {
-    const secretKey = process.env.JWT_SECRET_KEY as string
-    if (!secretKey) {
+    const secretKey = process.env.JWT_SECRET as string
+    if (secretKey == undefined) {
       throw new Error("Secret key not defined")
     }
 
     const decoded = jwt.verify(token, secretKey)
-    console.log(decoded)
 
     next()
   } catch (error) {

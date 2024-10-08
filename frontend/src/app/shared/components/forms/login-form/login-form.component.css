@@ -15,4 +15,9 @@
     justify-content: end;
     gap: var(--spacer-1);
   }
+
+  .error {
+    color: var(--danger-color-100);
+    font-size: 1.2rem;
+  }
 }

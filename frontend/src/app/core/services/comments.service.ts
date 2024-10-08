@@ -24,7 +24,14 @@ export class CommentsService {
   }
 
   addComment(comment: Comment) {
-    this.http.post(AppSettings.API_ENDPOINT + this.endpoint, comment)
+    this.http.post(
+      AppSettings.API_ENDPOINT + this.endpoint,
+      comment,
+      {
+        headers: {
+          "Authorization": `Bearer ${comment.user.token}`
+        }
+      })
       .subscribe({
         next: response => this.changed.next(response as Comment),
         error: error => console.log('Error adding comment ', error)

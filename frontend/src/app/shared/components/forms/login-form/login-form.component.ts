@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { LinkComponent } from "../../ui/link/link.component";
-import User from '@models/User';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
+import User from '@models/User';
 import { AuthService } from '@services/auth.service';
+import { LinkComponent } from "../../ui/link/link.component";
 
 @Component({
   selector: 'app-login-form',
@@ -13,19 +14,37 @@ import { AuthService } from '@services/auth.service';
 })
 export class LoginFormComponent implements OnInit {
   user!: User
+  error?: string
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
-    this.user = new User("", "", "", "", [], new Date())
+    this.user = new User("", "", "", "", "", [], new Date())
   }
 
   onSubmit(e: any) {
     e.preventDefault()
     this.authService.login(this.user)
       .subscribe({
-        next: response => console.log('User logged in ', response),
-        error: error => console.log('Error logging in ', error)
+        next: response => {
+          this.error = undefined
+          // store token in local storage and redirect to blog page
+          localStorage.setItem('user', JSON.stringify(new User(
+            this.user.email,
+            "",
+            (response as { token: string }).token,
+            undefined,
+            undefined,
+            undefined, undefined,
+            (response as { _id: string })._id
+          )))
+          //localStorage.setItem('token', (response as { token: string }).token)
+          this.router.navigate(['/blog'])
+        },
+        error: response => {
+          this.error = response.error.message
+          setTimeout(() => this.error = undefined, 5000)
+        }
       })
   }
 }

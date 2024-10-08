@@ -5,6 +5,7 @@
     <input [(ngModel)]="user.email" type="email" name="email" placeholder="📧 Correo">
     <label for="pswd">Contraseña</label>
     <input [(ngModel)]="user.pswd" type="password" name="pswd" placeholder="🔒 Contraseña">
+    @if(error) {<p class="error">{{ error }}</p>}
     <div class="buttons">
       <app-link href="auth/register" [toRoute]=true>Registrarse</app-link>
       <button type="submit">Iniciar Sesión</button>
