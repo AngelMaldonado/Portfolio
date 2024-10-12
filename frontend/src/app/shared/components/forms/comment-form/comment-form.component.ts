@@ -30,5 +30,6 @@ export class CommentFormComponent implements OnInit {
 
   onSubmit() {
     this.commentService.addComment(this.comment)
+    this.comment = new Comment(0, "", this.post, this.comment.user)
   }
 }
