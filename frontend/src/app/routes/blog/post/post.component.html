@@ -25,7 +25,11 @@
 <hr>
 <section aria-labelledby="comentarios" class="comments">
   <h3 id="comentarios">Comentarios (xx)</h3>
+  @if (canComment) {
   <app-comment-form [post]="post" />
+  } @else {
+  <p class="login-callout">Debes iniciar sesión para poder comentar</p>
+  }
   <ul aria-label="Lista de comentarios" class="comments-list">
     @for(comment of comments; track comment._id) {
     <li>

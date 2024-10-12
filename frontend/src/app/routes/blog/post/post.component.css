@@ -45,6 +45,30 @@ hr {
   margin: var(--container-padding-y) var(--container-padding-x)
 }
 
+.login-callout {
+  background-color: var(--primary-color-50);
+  border-left: 4px solid var(--primary-color-10);
+  padding: var(--spacer-1) var(--spacer-2);
+  margin: var(--spacer-2) 0;
+  border-radius: var(--card-border-radius);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-size: 0.7em;
+  color: var(--white);
+  line-height: 1.6;
+  position: relative;
+}
+
+.login-callout::before {
+  content: '💡';
+  font-size: 24px;
+  position: absolute;
+  /* position left and vertically aligned*/
+  top: 50%;
+  left: var(--spacer-1);
+  transform: translateY(-50%);
+}
+
 .comments {
   padding-top: 0;
   text-align: center;
@@ -59,7 +83,7 @@ hr {
       justify-content: start;
       align-items: center;
       gap: var(--spacer-1);
-      margin: var(--spacer-2) 0;
+      margin: 0 0 var(--spacer-2) 0;
 
       .user-pic {
         width: 5rem;
@@ -75,7 +99,6 @@ hr {
       &:first-child,
       &:last-child {
         margin-top: 0;
-        margin-bottom: 0;
       }
 
       &:last-child {
