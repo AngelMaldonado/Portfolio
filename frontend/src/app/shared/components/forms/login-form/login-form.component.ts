@@ -38,8 +38,7 @@ export class LoginFormComponent implements OnInit {
             undefined, undefined,
             (response as { _id: string })._id
           )))
-          //localStorage.setItem('token', (response as { token: string }).token)
-          this.router.navigate(['/blog'])
+          this.router.navigate(['/blog']).then(_ => window.location.reload())
         },
         error: response => {
           this.error = response.error.message

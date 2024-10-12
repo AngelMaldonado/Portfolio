@@ -13,6 +13,7 @@ class AuthRoutes {
 
   private Init() {
     this.router.post("/login", this.authController.Login.bind(this.authController))
+    this.router.post("/logout", this.authController.Logout.bind(this.authController))
     this.router.get("/validate", this.authController.Validate.bind(this.authController))
   }
 }

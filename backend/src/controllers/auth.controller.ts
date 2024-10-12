@@ -22,6 +22,10 @@ class AuthController {
     }
   }
 
+  async Logout(req: Request, res: Response) {
+    res.status(200).send({ message: "Sesión cerrada" })
+  }
+
   async Validate(request: Request, response: Response) {
     // get token from header
     const token = request.headers.authorization?.split(" ")[1]
