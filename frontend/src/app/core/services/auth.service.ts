@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import User from '@models/User';
 import AppSettings from '../../app.settings';
-import { lastValueFrom } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +20,10 @@ export class AuthService {
 
   login(user: User) {
     return this.http.post(AppSettings.API_ENDPOINT + this.loginEndpoint, user);
+  }
+
+  register(user: { email: string; pswd: string }) {
+    return this.http.post(AppSettings.API_ENDPOINT + this.registerEndpoint, user);
   }
 
   logout() {

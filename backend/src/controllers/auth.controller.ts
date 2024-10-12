@@ -22,6 +22,39 @@ class AuthController {
     }
   }
 
+  async Register(req: Request, res: Response) {
+    const { email, pswd } = req.body;
+
+    // Check if user already exists
+    const existingUser = await User.findOne({ email });
+    if (existingUser) {
+      return res.status(400).send({ message: "Email already registered" });
+    }
+
+    // Hash the password
+    const saltRounds = 10;
+    const hashedPassword = await bcrypt.hash(pswd, saltRounds);
+
+    // Create new user
+    const newUser = new User({
+      email,
+      pswd: hashedPassword,
+    });
+
+    // Save the new user in the database
+    await newUser.save();
+
+    // Return a token upon successful registration
+    const token = jwt.sign({ _id: newUser._id }, process.env.JWT_SECRET as string, {
+      expiresIn: "1h",
+    });
+
+    res.status(201).send({
+      _id: newUser._id,
+      token,
+    });
+  }
+
   async Logout(req: Request, res: Response) {
     res.status(200).send({ message: "Sesión cerrada" })
   }
