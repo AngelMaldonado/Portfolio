@@ -14,7 +14,7 @@ class AuthController {
         token: jwt.sign(
           { _id: user._id },
           process.env.JWT_SECRET as string,
-          { expiresIn: "60s" }
+          { expiresIn: "1h" }
         )
       })
     } else {
