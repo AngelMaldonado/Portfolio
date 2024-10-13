@@ -55,4 +55,9 @@ export class PostsService {
         error: error => console.log('Error deleting post ', error)
       })
   }
+
+  // New method to fetch the markdown content
+  fetchMarkdown(markdownUrl: string): Observable<string> {
+    return this.http.get(markdownUrl, { responseType: 'text' });
+  }
 }
