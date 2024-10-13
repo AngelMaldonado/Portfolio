@@ -4,6 +4,8 @@
   gap: var(--spacer-1);
 
   >.post-card__image {
+    border-radius: var(--card-border-radius);
+    overflow: hidden;
     height: 25rem;
 
     >img {

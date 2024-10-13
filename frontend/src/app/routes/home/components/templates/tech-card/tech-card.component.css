@@ -3,9 +3,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: end;
-  /* background: var(--landing-tech-card-bg); */
-  background-color: var(--primary-color-100);
+  justify-content: center;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   position: relative;
   transform: perspective(5000px) rotateY(var(--landing-card-rotation-y)) rotateX(var(--landing-card-rotation-x));
   transform-style: preserve-3d;
@@ -14,7 +19,11 @@
     width: 70%;
     max-width: 16rem;
     position: relative;
-    top: -2rem;
+    flex: 1;
+
+    img {
+      object-fit: contain;
+    }
   }
 
   >h3 {
@@ -23,41 +32,3 @@
   }
 }
 
-.landing-tech-card::before,
-.landing-tech-card::after {
-  content: "";
-  position: absolute;
-  border-radius: inherit;
-}
-
-.landing-tech-card::before {
-  inset: .75rem;
-  background: black;
-  filter: blur(15px);
-  opacity: .5;
-  transform: translateZ(-39px);
-}
-
-.landing-tech-card::after {
-  inset: -1rem;
-  background: linear-gradient(-45deg, red, blue);
-  transform: translateZ(-100px);
-}
-
-@media (width >=992px) {
-  .landing-tech-card {
-    >img {
-      position: relative;
-      width: 30%;
-      bottom: 3rem;
-    }
-  }
-}
-
-@media (width >=1200px) {
-  .landing-tech-card {
-    h3 {
-      margin-bottom: var(--spacer-2);
-    }
-  }
-}

@@ -23,8 +23,17 @@
     <li><app-link href="/blog" [toRoute]=true>Blog</app-link></li>
     } @else if (this.router.url == '/blog') {
     <li><app-link href="/" [toRoute]=true>Volver</app-link></li>
-    <li><app-link href="/admin" [toRoute]=true>Admin</app-link></li>
-    <li><app-link href="/login" [toRoute]=true>Login</app-link></li>
+    @if (user?.email == 'amaldonadojuarez@gmail.com') {
+    <li><app-link href="/dashboard" [toRoute]=true>Admin</app-link></li>
+    }
+    @if(loggedIn) {
+    <li><app-link (click)="onLogout()" [toRoute]=true>Cerrar Sesión</app-link></li>
+    <li><app-link href="/blog/user/{{user?._id}}" [toRoute]=true>Perfil</app-link></li>
+    }@else {
+    <li><app-link href="/auth/login" [toRoute]=true>Login</app-link></li>
+    }
+    } @else if (this.router.url.includes('/auth')) {
+    <li><app-link href="/blog" [toRoute]=true>Volver</app-link></li>
     }
   </ul>
 </nav>
