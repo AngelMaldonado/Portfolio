@@ -21,14 +21,19 @@
     <li><app-link href="#landing-proyectos">Proyectos</app-link></li>
     <li><app-link href="#landing-contacto">Contacto</app-link></li>
     <li><app-link href="/blog" [toRoute]=true>Blog</app-link></li>
-    } @else if (this.router.url == '/blog') {
-    <li><app-link href="/" [toRoute]=true>Volver</app-link></li>
+    } @else if (this.router.url.includes('/blog')) {
+    <li><app-link (click)="goBack()" [toRoute]=true>Volver</app-link></li>
     @if (user?.email == 'amaldonadojuarez@gmail.com') {
     <li><app-link href="/dashboard" [toRoute]=true>Admin</app-link></li>
     }
     @if(loggedIn) {
     <li><app-link (click)="onLogout()" [toRoute]=true>Cerrar Sesión</app-link></li>
-    <li><app-link href="/blog/user/{{user?._id}}" [toRoute]=true>Perfil</app-link></li>
+    <li>
+      <!-- <app-link href="/blog/user/{{user?._id}}" [toRoute]=true>Perfil</app-link> -->
+      <div class="user-pic">
+        <img class="max-img" [src]="'https://robohash.org/' + user?._id" alt="user-avatar#">
+      </div>
+    </li>
     }@else {
     <li><app-link href="/auth/login" [toRoute]=true>Login</app-link></li>
     }
