@@ -7,6 +7,8 @@ import { Comment, Post } from '@models/index';
 import { AuthService } from '@services/auth.service';
 import { PostsService, CommentsService } from '@services/index';
 import { CommentFormComponent } from '@shared/components/forms/comment-form/comment-form.component';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser'; // For sanitizing HTML
+import { marked } from 'marked'; // Import the marked library
 
 @Component({
   selector: 'app-blog-post',
@@ -19,6 +21,7 @@ export class PostComponent implements OnDestroy {
   post!: Post;
   comments: Comment[] = [];
   canComment = false;
+  markdownContent: SafeHtml = ''; // Safe HTML content for the markdown
   private commentChangeSub!: Subscription; // Subscription to handle comment changes
 
   constructor(
@@ -26,16 +29,22 @@ export class PostComponent implements OnDestroy {
     private activatedRoute: ActivatedRoute,
     private postService: PostsService,
     private authService: AuthService,
-    private commentService: CommentsService // Inject comment service
+    private commentService: CommentsService, // Inject comment service
+    private sanitizer: DomSanitizer // For sanitizing the rendered HTML
   ) {
     this.authService.validateSession().subscribe({
       next: _ => this.canComment = true,
       error: _ => this.canComment = false
     });
 
+    // Fetch the post details
     this.postService.getPost(this.activatedRoute.snapshot.params['id'])
-      .subscribe(post => this.post = post);
+      .subscribe(post => {
+        this.post = post;
+        this.fetchAndRenderMarkdown(post.markdownUrl); // Fetch and render markdown content
+      });
 
+    // Fetch the comments
     this.postService.getComments(this.activatedRoute.snapshot.params['id'])
       .subscribe(comments => this.comments = comments);
 
@@ -54,5 +63,19 @@ export class PostComponent implements OnDestroy {
 
   goBack() {
     this.location.back();
+  }
+
+  // Fetch the markdown content and render it as safe HTML
+  private fetchAndRenderMarkdown(markdownUrl: string): void {
+    this.postService.fetchMarkdown(markdownUrl).subscribe({
+      next: markdown => {
+        const html = marked(markdown) as string; // Convert markdown to HTML
+        console.log(html)
+        this.markdownContent = this.sanitizer.bypassSecurityTrustHtml(html); // Sanitize the HTML
+      },
+      error: err => {
+        console.error('Failed to fetch markdown content', err);
+      }
+    });
   }
 }

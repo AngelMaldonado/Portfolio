@@ -11,9 +11,7 @@
   <figure>
     <img class="max-img" [src]="post.imageUrl">
   </figure>
-  <div class="content">
-    <p>{{post.markdownUrl}}</p>
-  </div>
+  <div class="content" [innerHTML]="markdownContent"></div> <!-- Render sanitized markdown HTML -->
 </article>
 <hr>
 <section aria-labelledby="comentarios" class="comments">
