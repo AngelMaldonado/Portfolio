@@ -4,6 +4,7 @@ import User from '@models/User';
 import { AuthService } from '@services/auth.service';
 import { LinkComponent } from '@shared/components/ui';
 import { Subscription } from 'rxjs';
+import { Location } from '@angular/common'; // Correct import from '@angular/common'
 
 @Component({
   selector: 'app-navbar',
@@ -18,7 +19,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
   user?: User;
   private subscription: Subscription = new Subscription();
 
-  constructor(protected router: Router, private elementRef: ElementRef, private authService: AuthService) { }
+  constructor(protected router: Router, private elementRef: ElementRef, private authService: AuthService, private location: Location) { }
 
   ngOnInit() {
     this.subscription.add(
@@ -82,6 +83,10 @@ export class NavbarComponent implements AfterViewInit, OnInit {
     } else if (window.scrollY <= navbar.clientHeight) {
       navbar.classList.remove('blur');
     }
+  }
+
+  goBack() {
+    this.location.back();
   }
 
   onLandingPage() {

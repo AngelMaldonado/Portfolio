@@ -25,6 +25,12 @@
     background-color: inherit;
   }
 
+  .user-pic {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+  }
+
   &.blur {
     background-color: var(--primary-color-50-with-opacity);
     padding: var(--navbar-padding-blur);
