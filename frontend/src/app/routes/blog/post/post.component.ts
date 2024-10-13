@@ -1,5 +1,5 @@
 import { DatePipe, Location } from '@angular/common';
-import { Component, OnDestroy } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { BadgeComponent, StarsRatingComponent } from '@components/ui';
