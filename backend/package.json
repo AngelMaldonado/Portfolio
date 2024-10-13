@@ -4,7 +4,6 @@
   "description": "This is the backend (server) API of the Angel Maldonado's portfolio website",
   "main": "./src/index.js",
   "scripts": {
-    "prebuild": "npm run svg",
     "build": "npx tsc",
     "start": "node dist/index.js",
     "dev": "nodemon",
