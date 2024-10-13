@@ -390,3 +390,153 @@ p {
     color: var(--white);
   }
 }
+
+/* Estilos generales */
+.content {
+  line-height: 1.6;
+  /* Fondo oscuro */
+  padding: 20px;
+  color: #ffffff;
+  /* Texto claro */
+}
+
+/* Estilos para bloques de código */
+.content pre {
+  background-color: #2a2a2a !important;
+  /* Fondo de bloque de código oscuro */
+  border-radius: 6px;
+  padding: 16px;
+  overflow: auto;
+  border: 1px solid #444;
+  /* Borde oscuro */
+  margin: 16px 0;
+  /* Margen superior e inferior */
+  white-space: pre-wrap;
+  /* Evitar desbordamiento de contenido */
+  font-size: 1em;
+  /* Tamaño de fuente ajustado */
+}
+
+/* Estilos para el código en línea */
+.content code {
+  background-color: #2a2a2a;
+  /* Fondo oscuro para código en línea */
+  border-radius: 4px;
+  padding: 2px 4px;
+  font-family: 'Courier New', Courier, monospace;
+  /* Fuente monoespaciada */
+  font-size: 0.95em;
+  /* Tamaño de fuente ajustado */
+  color: #e7e7e7;
+  /* Color de texto claro */
+}
+
+/* Otros estilos para encabezados, enlaces y párrafos */
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6 {
+  color: #ffffff;
+  /* Texto de encabezados en blanco */
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+}
+
+.content h1 {
+  font-size: 2.5em;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+}
+
+.content h2 {
+  font-size: 2em;
+  border-bottom: 1px solid #3498db;
+  padding-bottom: 8px;
+}
+
+.content p {
+  margin-bottom: 1em;
+}
+
+.content a {
+  color: #3498db;
+  /* Color de enlace */
+  text-decoration: none;
+}
+
+.content a:hover {
+  text-decoration: underline;
+}
+
+.content ul,
+.content ol {
+  padding-left: 20px;
+  margin-bottom: 1em;
+}
+
+.content li {
+  margin-bottom: 0.5em;
+}
+
+/* Tablas */
+.content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1em;
+}
+
+.content table th,
+.content table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #444;
+  /* Borde oscuro */
+}
+
+.content table th {
+  background-color: #3498db;
+  /* Color de fondo de encabezado */
+  color: white;
+}
+
+.content table tr:nth-child(even) {
+  background-color: #333;
+  /* Color de fondo de filas pares */
+}
+
+/* Bloques de citas */
+.content blockquote {
+  margin: 1em 0;
+  padding: 10px 20px;
+  background-color: #2a2a2a;
+  /* Fondo oscuro para citas */
+  border-left: 5px solid #3498db;
+  /* Borde azul */
+  color: #ffffff;
+  /* Texto blanco */
+}
+
+.content blockquote p {
+  margin: 0;
+  font-style: italic;
+}
+
+/* Imágenes */
+.content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+}
+
+/* Separadores (líneas horizontales) */
+.content hr {
+  border: 0;
+  height: 1px;
+  background: #3498db;
+  /* Color azul */
+  margin: 20px 0;
+}
