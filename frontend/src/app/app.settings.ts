@@ -1,3 +1,3 @@
 export default class AppSettings {
-  public static readonly API_ENDPOINT = 'https://portfolio-production-85a3.up.railway.app/api';
+  public static readonly API_ENDPOINT = 'http://localhost:3000/api';
 }

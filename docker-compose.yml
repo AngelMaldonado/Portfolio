@@ -1,0 +1,21 @@
+services:
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - 4200:4200
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - 3000:3000
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=mongodb://db:27017/angel-maldonado
+      - JWT_SECRET=7e4f4fdc2e1b1fc944097e8c44aa86ef48f8e843
+      - PORT=3000
+  db:
+    image: mongo:4.0-xenial
+    ports:
+      - 27017:27017
