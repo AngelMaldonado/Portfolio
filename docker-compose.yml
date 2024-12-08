@@ -1,12 +1,10 @@
 services:
   frontend:
-    build:
-      context: ./frontend
+    build: ./frontend
     ports:
       - 4200:4200
   backend:
-    build:
-      context: ./backend
+    build: ./backend
     ports:
       - 3000:3000
     depends_on:
