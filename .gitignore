@@ -1,0 +1,4 @@
+# ignore docker related files in all directories
+**/Dockerfile
+**/docker-compose.yml
+**/.dockerignore
