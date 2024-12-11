@@ -1,0 +1,10 @@
+.angular/
+.idea/
+.vscode/
+dist/
+HOME/
+node_modules/
+.editorconfig
+.gitignore
+.git/
+README.md

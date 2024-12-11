@@ -1,0 +1,23 @@
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - ...
+  backend:
+    build: ./backend
+    ports:
+      - ...
+    depends_on:
+      - db-container
+    environment:
+      - DATABASE_URL=<...>
+      - JWT_SECRET=<...>
+      - PORT=...
+  db-container:
+    image: mongo:8.0.4-noble
+    ports:
+      - ...
+    volumes:
+      - ...
+volumes:
+  ...:

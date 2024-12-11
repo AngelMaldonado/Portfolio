@@ -1,0 +1,9 @@
+.vscode/
+dist/
+node_modules/
+tests/
+.editorconfig
+.env
+.env.example
+.gitignore
+.git/
