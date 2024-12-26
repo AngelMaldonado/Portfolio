@@ -6,11 +6,10 @@ import { LinkComponent } from '@shared/components/ui';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-register-form',
-  standalone: true,
-  imports: [ReactiveFormsModule, CommonModule, LinkComponent], // Add ReactiveFormsModule here
-  templateUrl: './register-form.component.html',
-  styleUrls: ['./register-form.component.css'],
+    selector: 'app-register-form',
+    imports: [ReactiveFormsModule, CommonModule, LinkComponent], // Add ReactiveFormsModule here
+    templateUrl: './register-form.component.html',
+    styleUrls: ['./register-form.component.css']
 })
 export class RegisterFormComponent {
   registerForm: FormGroup;

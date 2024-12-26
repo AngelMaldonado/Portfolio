@@ -3,11 +3,10 @@ import { SvgIconComponent } from '@ngneat/svg-icon';
 import { ModalService } from '@services/index';
 
 @Component({
-  selector: 'app-modal',
-  standalone: true,
-  imports: [SvgIconComponent],
-  templateUrl: './modal.component.html',
-  styleUrl: './modal.component.css'
+    selector: 'app-modal',
+    imports: [SvgIconComponent],
+    templateUrl: './modal.component.html',
+    styleUrl: './modal.component.css'
 })
 export class ModalComponent implements OnInit {
   @Input({ required: true }) id!: string;

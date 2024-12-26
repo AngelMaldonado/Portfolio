@@ -2,11 +2,10 @@ import { Component, Input } from '@angular/core';
 import { SvgIconComponent, SvgIcons } from '@ngneat/svg-icon';
 
 @Component({
-  selector: 'app-landing-icon-link',
-  standalone: true,
-  imports: [SvgIconComponent],
-  templateUrl: './landing-icon-link.component.html',
-  styleUrl: './landing-icon-link.component.css'
+    selector: 'app-landing-icon-link',
+    imports: [SvgIconComponent],
+    templateUrl: './landing-icon-link.component.html',
+    styleUrl: './landing-icon-link.component.css'
 })
 export class LandingIconLinkComponent {
   @Input() text: string = 'Icon'

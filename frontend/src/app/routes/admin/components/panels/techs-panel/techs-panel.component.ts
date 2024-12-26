@@ -4,11 +4,10 @@ import { SkillsService } from '@services/skills.service';
 import Skill from '@models/Skill';
 
 @Component({
-  selector: 'app-dashboard-techs-panel',
-  standalone: true,
-  imports: [TechCardComponent],
-  templateUrl: './techs-panel.component.html',
-  styleUrl: './techs-panel.component.css'
+    selector: 'app-dashboard-techs-panel',
+    imports: [TechCardComponent],
+    templateUrl: './techs-panel.component.html',
+    styleUrl: './techs-panel.component.css'
 })
 export class TechPanelComponent implements OnInit {
   skills: Skill[]

@@ -11,11 +11,10 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser'; // For sanit
 import { marked } from 'marked'; // Import the marked library
 
 @Component({
-  selector: 'app-blog-post',
-  standalone: true,
-  imports: [BadgeComponent, StarsRatingComponent, RouterLink, DatePipe, CommentFormComponent],
-  templateUrl: './post.component.html',
-  styleUrl: './post.component.css'
+    selector: 'app-blog-post',
+    imports: [BadgeComponent, StarsRatingComponent, RouterLink, DatePipe, CommentFormComponent],
+    templateUrl: './post.component.html',
+    styleUrl: './post.component.css'
 })
 export class PostComponent implements OnDestroy {
   post!: Post;

@@ -7,11 +7,10 @@ import { Subscription } from 'rxjs';
 import { Location } from '@angular/common'; // Correct import from '@angular/common'
 
 @Component({
-  selector: 'app-navbar',
-  standalone: true,
-  imports: [LinkComponent],
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css'] // Corrected to styleUrls
+    selector: 'app-navbar',
+    imports: [LinkComponent],
+    templateUrl: './navbar.component.html',
+    styleUrls: ['./navbar.component.css'] // Corrected to styleUrls
 })
 export class NavbarComponent implements AfterViewInit, OnInit {
   expanded: boolean = false;

@@ -6,11 +6,10 @@ import User from '@models/User';
 import { AuthService } from '@services/auth.service';
 
 @Component({
-  selector: 'app-blog-profile',
-  standalone: true,
-  imports: [SvgIconComponent, LinkComponent, BlogPostCardComponent],
-  templateUrl: './profile.component.html',
-  styleUrl: './profile.component.css'
+    selector: 'app-blog-profile',
+    imports: [SvgIconComponent, LinkComponent, BlogPostCardComponent],
+    templateUrl: './profile.component.html',
+    styleUrl: './profile.component.css'
 })
 export class ProfileComponent {
   user?: User;

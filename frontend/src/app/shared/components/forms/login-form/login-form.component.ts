@@ -6,11 +6,10 @@ import { AuthService } from '@services/auth.service';
 import { LinkComponent } from "../../ui/link/link.component";
 
 @Component({
-  selector: 'app-login-form',
-  standalone: true,
-  imports: [LinkComponent, FormsModule],
-  templateUrl: './login-form.component.html',
-  styleUrl: './login-form.component.css'
+    selector: 'app-login-form',
+    imports: [LinkComponent, FormsModule],
+    templateUrl: './login-form.component.html',
+    styleUrl: './login-form.component.css'
 })
 export class LoginFormComponent implements OnInit {
   user!: User

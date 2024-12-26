@@ -4,11 +4,10 @@ import User from '@models/User';
 import { UsersService } from '@services/users.service';
 
 @Component({
-  selector: 'app-dashboard-users-panel',
-  standalone: true,
-  imports: [UserCardComponent, UserCardComponent],
-  templateUrl: './users-panel.component.html',
-  styleUrl: './users-panel.component.css'
+    selector: 'app-dashboard-users-panel',
+    imports: [UserCardComponent, UserCardComponent],
+    templateUrl: './users-panel.component.html',
+    styleUrl: './users-panel.component.css'
 })
 export class UsersPanelComponent implements OnInit {
   users: User[]

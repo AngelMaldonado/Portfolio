@@ -6,11 +6,10 @@ import { ModalService, SkillsService } from '@services/index';
 import { ModalMode } from '@services/modal.service';
 
 @Component({
-  selector: 'app-technology-form',
-  standalone: true,
-  imports: [SvgIconComponent, FormsModule],
-  templateUrl: './technology-form.component.html',
-  styleUrl: './technology-form.component.css'
+    selector: 'app-technology-form',
+    imports: [SvgIconComponent, FormsModule],
+    templateUrl: './technology-form.component.html',
+    styleUrl: './technology-form.component.css'
 })
 export class TechnologyComponent {
   model = new Skill('', '')

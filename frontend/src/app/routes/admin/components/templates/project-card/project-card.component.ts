@@ -6,11 +6,10 @@ import { ModalMode, ModalService } from '@services/modal.service';
 import { LinkComponent } from '@shared/components/ui';
 
 @Component({
-  selector: 'app-dashboard-project-card',
-  standalone: true,
-  imports: [SvgIconComponent, LinkComponent, DatePipe],
-  templateUrl: './project-card.component.html',
-  styleUrl: './project-card.component.css'
+    selector: 'app-dashboard-project-card',
+    imports: [SvgIconComponent, LinkComponent, DatePipe],
+    templateUrl: './project-card.component.html',
+    styleUrl: './project-card.component.css'
 })
 export class ProjectCardComponent {
   @Input({ required: true }) project!: Project

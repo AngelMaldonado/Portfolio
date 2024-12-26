@@ -5,11 +5,10 @@ import { BlogPostCardComponent } from '@shared/components/templates/blog-post-ca
 import { BadgeComponent, LinkComponent } from '@shared/components/ui';
 
 @Component({
-  selector: 'app-blog-home',
-  standalone: true,
-  imports: [LinkComponent, BadgeComponent, BlogPostCardComponent],
-  templateUrl: './posts.component.html',
-  styleUrl: './posts.component.css'
+    selector: 'app-blog-home',
+    imports: [LinkComponent, BadgeComponent, BlogPostCardComponent],
+    templateUrl: './posts.component.html',
+    styleUrl: './posts.component.css'
 })
 export class HomeComponent {
   posts: Post[] = []

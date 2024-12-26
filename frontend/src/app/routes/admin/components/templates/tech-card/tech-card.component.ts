@@ -5,11 +5,10 @@ import { ModalMode, ModalService } from '@services/modal.service';
 import { ModalComponent } from '@shared/components/templates/modal/modal.component';
 
 @Component({
-  selector: 'app-dashboard-tech-card',
-  standalone: true,
-  imports: [SvgIconComponent, ModalComponent],
-  templateUrl: './tech-card.component.html',
-  styleUrl: './tech-card.component.css'
+    selector: 'app-dashboard-tech-card',
+    imports: [SvgIconComponent, ModalComponent],
+    templateUrl: './tech-card.component.html',
+    styleUrl: './tech-card.component.css'
 })
 export class TechCardComponent {
   @Input({ required: true }) skill!: Skill;

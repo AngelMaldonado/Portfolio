@@ -6,11 +6,10 @@ import { ModalMode, ModalService } from '@services/modal.service';
 import { UsersService } from '@services/users.service';
 
 @Component({
-  selector: 'app-user-form',
-  standalone: true,
-  imports: [SvgIconComponent, FormsModule],
-  templateUrl: './user-form.component.html',
-  styleUrl: './user-form.component.css'
+    selector: 'app-user-form',
+    imports: [SvgIconComponent, FormsModule],
+    templateUrl: './user-form.component.html',
+    styleUrl: './user-form.component.css'
 })
 export class UserFormComponent {
   model = new User('', '')

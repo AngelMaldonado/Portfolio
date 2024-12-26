@@ -6,11 +6,10 @@ import { LandingIconLinkComponent, LinkComponent } from '@shared/components/ui';
 import { LandingTechCardComponent } from './components/templates/tech-card/tech-card.component';
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [LandingTechCardComponent, LandingProjectCardComponent, LandingIconLinkComponent, LinkComponent],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+    selector: 'app-home',
+    imports: [LandingTechCardComponent, LandingProjectCardComponent, LandingIconLinkComponent, LinkComponent],
+    templateUrl: './home.component.html',
+    styleUrl: './home.component.css'
 })
 export class HomeComponent {
   techs: Skill[] = []
