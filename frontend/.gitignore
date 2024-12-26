@@ -5,7 +5,8 @@
 /tmp
 /out-tsc
 /bazel-out
-/src/assets/svg
+/src/assets/svg/*
+!/src/assets/svg/index.ts
 
 # Node
 /node_modules
