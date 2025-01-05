@@ -1,11 +1,11 @@
 import { Component, Input } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
-    selector: 'app-link',
-    imports: [RouterLink],
-    templateUrl: './link.component.html',
-    styleUrl: './link.component.css'
+  selector: 'app-link',
+  imports: [],
+  templateUrl: './link.component.html',
+  styleUrl: './link.component.css'
 })
 export class LinkComponent {
   @Input() href: string = '#';
