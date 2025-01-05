@@ -1,5 +1,6 @@
 import { Router } from "express"
 import PostController from "../controllers/post.controller"
+import authMiddleware from "../middleware/auth.middleware"
 
 class PostRoutes {
   private readonly postController: PostController
@@ -15,9 +16,9 @@ class PostRoutes {
     this.router.get("/", this.postController.All.bind(this.postController))
     this.router.get("/:id", this.postController.Get.bind(this.postController))
     this.router.get("/:id/comments", this.postController.Comments.bind(this.postController))
-    this.router.post("/", this.postController.Create.bind(this.postController))
-    this.router.put("/", this.postController.UpdateOne.bind(this.postController))
-    this.router.delete("/:id", this.postController.DeleteOne.bind(this.postController))
+    this.router.post("/", authMiddleware, this.postController.Create.bind(this.postController))
+    this.router.put("/", authMiddleware, this.postController.UpdateOne.bind(this.postController))
+    this.router.delete("/:id", authMiddleware, this.postController.DeleteOne.bind(this.postController))
   }
 }
 
