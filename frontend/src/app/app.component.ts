@@ -5,7 +5,6 @@ import { fromEvent, throttleTime } from 'rxjs';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
   imports: [RouterOutlet, NavbarComponent, FooterComponent, DashboardNavbarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

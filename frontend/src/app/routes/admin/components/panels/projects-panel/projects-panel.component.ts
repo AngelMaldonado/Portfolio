@@ -4,11 +4,10 @@ import Project from '@models/Project';
 import { ProjectsService } from '@services/projects.service';
 
 @Component({
-  selector: 'app-dashboard-projects-panel',
-  standalone: true,
-  imports: [ProjectCardComponent],
-  templateUrl: './projects-panel.component.html',
-  styleUrl: './projects-panel.component.css'
+    selector: 'app-dashboard-projects-panel',
+    imports: [ProjectCardComponent],
+    templateUrl: './projects-panel.component.html',
+    styleUrl: './projects-panel.component.css'
 })
 export class ProjectsPanelComponent implements OnInit {
   projects: Project[]

@@ -2,13 +2,12 @@ import { Component } from '@angular/core';
 import { Project, Skill } from '@models/index';
 import { ProjectsService, SkillsService } from '@services/index';
 import { LandingProjectCardComponent } from '@shared/components/templates/landing-project-card/landing-project-card.component';
-import { LandingIconLinkComponent, LinkComponent } from '@shared/components/ui';
+import { LandingIconLinkComponent } from '@shared/components/ui';
 import { LandingTechCardComponent } from './components/templates/tech-card/tech-card.component';
 
 @Component({
   selector: 'app-home',
-  standalone: true,
-  imports: [LandingTechCardComponent, LandingProjectCardComponent, LandingIconLinkComponent, LinkComponent],
+  imports: [LandingTechCardComponent, LandingProjectCardComponent, LandingIconLinkComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

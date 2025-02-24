@@ -5,11 +5,10 @@ import { ModalMode, ModalService } from '@services/modal.service';
 import { BadgeComponent, LinkComponent } from '@shared/components/ui';
 
 @Component({
-  selector: 'app-dashboard-post-card',
-  standalone: true,
-  imports: [LinkComponent, BadgeComponent, SvgIconComponent],
-  templateUrl: './post-card.component.html',
-  styleUrl: './post-card.component.css'
+    selector: 'app-dashboard-post-card',
+    imports: [LinkComponent, BadgeComponent, SvgIconComponent],
+    templateUrl: './post-card.component.html',
+    styleUrl: './post-card.component.css'
 })
 export class PostCardComponent {
   @Input({ required: true }) post!: Post

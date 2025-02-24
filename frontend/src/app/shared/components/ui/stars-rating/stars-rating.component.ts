@@ -1,11 +1,10 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-stars-rating',
-  standalone: true,
-  imports: [],
-  templateUrl: './stars-rating.component.html',
-  styleUrl: './stars-rating.component.css'
+    selector: 'app-stars-rating',
+    imports: [],
+    templateUrl: './stars-rating.component.html',
+    styleUrl: './stars-rating.component.css'
 })
 export class StarsRatingComponent {
   @Output() starsChange = new EventEmitter<number>()

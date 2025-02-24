@@ -10,11 +10,10 @@ import { PostFormComponent } from "../../forms/post-form/post-form.component";
 import { ModalService, ModalState } from '@services/modal.service';
 
 @Component({
-  selector: 'app-dashboard-navbar',
-  standalone: true,
-  imports: [LinkComponent, SvgIconComponent, ModalComponent, TechnologyComponent, ProjectFormComponent, UserFormComponent, PostFormComponent],
-  templateUrl: './dashboard-navbar.component.html',
-  styleUrl: './dashboard-navbar.component.css'
+    selector: 'app-dashboard-navbar',
+    imports: [LinkComponent, SvgIconComponent, ModalComponent, TechnologyComponent, ProjectFormComponent, UserFormComponent, PostFormComponent],
+    templateUrl: './dashboard-navbar.component.html',
+    styleUrl: './dashboard-navbar.component.css'
 })
 export class DashboardNavbarComponent implements AfterViewInit {
   expanded: boolean = false

@@ -4,11 +4,10 @@ import Post from '@models/Post';
 import { PostsService } from '@services/posts.service';
 
 @Component({
-  selector: 'app-dashboard-posts-panel',
-  standalone: true,
-  imports: [PostCardComponent],
-  templateUrl: './posts-panel.component.html',
-  styleUrl: './posts-panel.component.css'
+    selector: 'app-dashboard-posts-panel',
+    imports: [PostCardComponent],
+    templateUrl: './posts-panel.component.html',
+    styleUrl: './posts-panel.component.css'
 })
 export class PostsPanelComponent {
   posts: Post[]

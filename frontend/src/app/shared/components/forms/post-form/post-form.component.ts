@@ -6,11 +6,10 @@ import { ModalService, PostsService } from '@services/index';
 import { ModalMode } from '@services/modal.service';
 
 @Component({
-  selector: 'app-post-form',
-  standalone: true,
-  imports: [SvgIconComponent, FormsModule],
-  templateUrl: './post-form.component.html',
-  styleUrl: './post-form.component.css'
+    selector: 'app-post-form',
+    imports: [SvgIconComponent, FormsModule],
+    templateUrl: './post-form.component.html',
+    styleUrl: './post-form.component.css'
 })
 export class PostFormComponent {
   model = new Post('', '', '', '', '')

@@ -7,11 +7,10 @@ import { ModalService, ProjectsService } from '@services/index';
 import { ModalMode } from '@services/modal.service';
 
 @Component({
-  selector: 'app-project-form',
-  standalone: true,
-  imports: [SvgIconComponent, FormsModule, DatePipe],
-  templateUrl: './project-form.component.html',
-  styleUrl: './project-form.component.css'
+    selector: 'app-project-form',
+    imports: [SvgIconComponent, FormsModule, DatePipe],
+    templateUrl: './project-form.component.html',
+    styleUrl: './project-form.component.css'
 })
 export class ProjectFormComponent {
   model = new Project(new Date(), new Date(), '', '', '', '')

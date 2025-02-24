@@ -2,11 +2,10 @@ import { AfterViewInit, Component, ElementRef, Input } from '@angular/core';
 import Skill from '@models/Skill';
 
 @Component({
-  selector: 'app-landing-tech-card',
-  standalone: true,
-  imports: [],
-  templateUrl: './tech-card.component.html',
-  styleUrl: './tech-card.component.css'
+    selector: 'app-landing-tech-card',
+    imports: [],
+    templateUrl: './tech-card.component.html',
+    styleUrl: './tech-card.component.css'
 })
 export class LandingTechCardComponent implements AfterViewInit {
   @Input({ required: true }) tech!: Skill;

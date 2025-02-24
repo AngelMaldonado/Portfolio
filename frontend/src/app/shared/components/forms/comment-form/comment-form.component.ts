@@ -6,11 +6,10 @@ import { CommentsService } from "@services/comments.service";
 import { StarsRatingComponent } from "@shared/components/ui";
 
 @Component({
-  selector: 'app-comment-form',
-  standalone: true,
-  imports: [StarsRatingComponent, FormsModule],
-  templateUrl: './comment-form.component.html',
-  styleUrl: './comment-form.component.css'
+    selector: 'app-comment-form',
+    imports: [StarsRatingComponent, FormsModule],
+    templateUrl: './comment-form.component.html',
+    styleUrl: './comment-form.component.css'
 })
 export class CommentFormComponent implements OnInit {
   @Input({ required: true }) post!: Post

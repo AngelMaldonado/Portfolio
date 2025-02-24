@@ -1,19 +1,17 @@
 import { DatePipe, Location } from '@angular/common';
-import { AfterViewInit, Component, OnDestroy } from '@angular/core';
-import { ActivatedRoute, RouterLink } from '@angular/router';
-import { Subscription } from 'rxjs';
-import { BadgeComponent, StarsRatingComponent } from '@components/ui';
+import { Component, OnDestroy } from '@angular/core';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser'; // For sanitizing HTML
+import { ActivatedRoute } from '@angular/router';
 import { Comment, Post } from '@models/index';
 import { AuthService } from '@services/auth.service';
-import { PostsService, CommentsService } from '@services/index';
+import { CommentsService, PostsService } from '@services/index';
 import { CommentFormComponent } from '@shared/components/forms/comment-form/comment-form.component';
-import { DomSanitizer, SafeHtml } from '@angular/platform-browser'; // For sanitizing HTML
 import { marked } from 'marked'; // Import the marked library
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-blog-post',
-  standalone: true,
-  imports: [BadgeComponent, StarsRatingComponent, RouterLink, DatePipe, CommentFormComponent],
+  imports: [DatePipe, CommentFormComponent],
   templateUrl: './post.component.html',
   styleUrl: './post.component.css'
 })

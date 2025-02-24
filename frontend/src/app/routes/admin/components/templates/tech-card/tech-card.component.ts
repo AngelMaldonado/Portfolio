@@ -2,12 +2,10 @@ import { Component, Input } from '@angular/core';
 import Skill from '@models/Skill';
 import { SvgIconComponent } from '@ngneat/svg-icon';
 import { ModalMode, ModalService } from '@services/modal.service';
-import { ModalComponent } from '@shared/components/templates/modal/modal.component';
 
 @Component({
   selector: 'app-dashboard-tech-card',
-  standalone: true,
-  imports: [SvgIconComponent, ModalComponent],
+  imports: [SvgIconComponent],
   templateUrl: './tech-card.component.html',
   styleUrl: './tech-card.component.css'
 })
